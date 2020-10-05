@@ -12,26 +12,23 @@
 <body>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
+    <input type="text" name="DC1" placeholder="Decimal Coordinate 1" value="" size = "50">
+    <input type="text" name="DC2" placeholder="Decimal Coordinate 2" value="" size = "50">
+    <input type="submit" value="Anwenden">
     <div id="map"></div>
     <script>
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
-  var uluru = {lat: 47.4, lng: 8.54};
+  var zuerich = {lat: 47, lng: 8};
   // The map, centered at Uluru
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 12, center: uluru});
+      document.getElementById('map'), {zoom: 4, center: zuerich});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+  var marker = new google.maps.Marker({position: zuerich, map: map});
 }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap">
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap">
     </script>
 </body>
 </html>
