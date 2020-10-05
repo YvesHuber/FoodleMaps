@@ -12,23 +12,31 @@
 <body>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
-    <input type="text" name="DC1" placeholder="Decimal Coordinate 1" value="" size = "50">
-    <input type="text" name="DC2" placeholder="Decimal Coordinate 2" value="" size = "50">
-    <input type="submit" value="Anwenden">
+    <form  id = "SubmitButton">
+        <input type="text" name="DC1" placeholder="Decimal Coordinate 1" value="" size = "50">
+        <input type="text" name="DC2" placeholder="Decimal Coordinate 2" value="" size = "50">
+        <input type="submit" value="Anwenden">
+    </form>
     <div id="map"></div>
     <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var zuerich = {lat: 47, lng: 8};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: zuerich});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: zuerich, map: map});
-}
+
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        //var zuerich = {lat: document.getElementsByName("DC1"), lng: document.getElementsByName("DC2")};
+        var target = new google.maps.LatLng(document.getElementsByName("DC1")[0].value, document.getElementsByName("DC2")[0].value);
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: target});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: target, map: map});
+    }
+
+    document.getElementById("SubmitButton").onsubmit = function (evt) { 	
+        initMap();
+        evt.preventDefault();
+    }
     </script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap">
-    </script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ"></script>
 </body>
 </html>
