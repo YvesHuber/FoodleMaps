@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html> 
-<title>HTML with PHP</title>
+<title>Foodle</title>
 <head>
     <style>
     #map {
-        height: 400px; 
+        height: 650px; 
         width: 100%; 
     }
     </style>
 </head>
 <body>
-    <h3>My Google Maps Demo</h3>
+    <h3>Foodle Maps {Demo}</h3>
     <!--The div element for the map -->
-    <form  id = "SubmitButton">
+    <form  id="SubmitButton" style="display:inline">
         <input type="text" name="DC1" placeholder="Decimal Coordinate 1" value="" size = "50">
         <input type="text" name="DC2" placeholder="Decimal Coordinate 2" value="" size = "50">
         <input type="submit" value="Anwenden">
     </form>
-    <form id = "RandomButton">
+    <form id = "RandomButton" style="display:inline">
         <input type="submit" value="Take Me Anyweare!">
     </form>
     <div id="map"></div>
     <script>
-
+    
     // Initialize and add the map
     function initMap() {
-        var target = new google.maps.LatLng(document.getElementsByName("DC1")[0].value, document.getElementsByName("DC2")[0].value);
-        var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 10, center: target});
+        var target = new google.maps.LatLng(document.getElementByName("DC1").value, document.getElementByName("DC2").value);
+        var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: target});
         var marker = new google.maps.Marker({position: target, map: map});
     }
     
