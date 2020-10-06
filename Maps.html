@@ -4,7 +4,7 @@
 <head>
     <style>
     #map {
-        height: 100%;  
+        height: 97%;  
     }
     html, body {
     height: 100%;
@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <h3>Foodle Maps {Demo}</h3>
+    
     <!--The div element for the map -->
     <form  id="SubmitButton" style="display:inline">
         <input type="text" name="DC1" placeholder="Coordinate S/N or DC 1" value="" size = "50" id="DC1">
@@ -57,7 +57,7 @@
             minzoom: 0, 
             center: target, 
             gestureHandling: 'greedy',
-            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: /*Unkown*/, east: /*Unkown*/}, strictBounds: false}});
+            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: 0/*Unkown*/, east: 0/*Unkown*/}, strictBounds: false}});
         map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
@@ -73,7 +73,7 @@
             zoom: 13, 
             center: target, 
             gestureHandling: 'greedy',
-            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: /*Unkown*/, east: /*Unkown*/}, strictBounds: true}});
+            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: 0/*Unkown*/, east: 0/*Unkown*/}, strictBounds: true}});
         map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         infoWindow = new google.maps.InfoWindow();
