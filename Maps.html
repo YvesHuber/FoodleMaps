@@ -4,17 +4,21 @@
 <head>
     <style>
     #map {
-        height: 650px; 
-        width: 100%; 
+        height: 100%;  
     }
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
     </style>
 </head>
 <body>
     <h3>Foodle Maps {Demo}</h3>
     <!--The div element for the map -->
     <form  id="SubmitButton" style="display:inline">
-        <input type="text" name="DC1" placeholder="Coordinate S/N" value="" size = "50" id="DC1">
-        <input type="text" name="DC2" placeholder="Coordinate W/E" value="" size = "50" id="DC2">
+        <input type="text" name="DC1" placeholder="Coordinate S/N or DC 1" value="" size = "50" id="DC1">
+        <input type="text" name="DC2" placeholder="Coordinate W/E or DC 2" value="" size = "50" id="DC2">
         <input type="submit" value="Anwenden">
     </form>
     <form id = "RandomButton" style="display:inline">
@@ -23,6 +27,9 @@
     <div id="map"></div>
     <script>
 
+    let map, 
+    infoWindow;
+
     function ConvertDMSToDEG(dms) {   
         var dms_Array = dms.split(/[^\d\w\.]+/); 
         var degrees = dms_Array[0];
@@ -30,35 +37,52 @@
         var seconds = dms_Array[2];
         var direction = dms_Array[3];
 
-        var deg = (Number(degrees) + Number(minutes)/60 + Number(seconds)/3600).toFixed(6);
+        var deg = (Number(degrees) + Number(minutes) /60 + Number(seconds) / 3600).toFixed(6);
 
         if (direction == "S" || direction == "W") {
             deg = deg * -1;
-        } // Don't do anything for N or E
+        }
+        if(direction != "S" && direction != "W" && direction != "N" && direction != "E" && direction != "O"){
+            deg = dms;
+        }
         return deg;
     }
 
-    // Initialize and add the map
-    
     document.getElementById("SubmitButton").onsubmit = function (evt) {
         var lat = ConvertDMSToDEG(document.getElementById("DC1").value);
         var lng = ConvertDMSToDEG(document.getElementById("DC2").value);
         var target = new google.maps.LatLng(lat, lng);
-        var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: target});
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10, 
+            minzoom: 0, 
+            center: target, 
+            gestureHandling: 'greedy',
+            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: /*Unkown*/, east: /*Unkown*/}, strictBounds: false}});
+        map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
     }
 
     document.getElementById("RandomButton").onsubmit = function (evt) { 	
-        max = 85;
-        min = -85;
-        var target = new google.maps.LatLng(Math.random() * (max - min) + min, Math.random() * (max - min) + min);
-        var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: target});
+        maxminheight = 85;
+        maxminwidth = 178.01171875;
+        lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
+        lat = Math.random() * (maxminheight - maxminheight * (-1)) + maxminheight * (-1);
+        var target = new google.maps.LatLng(lat, lng);
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13, 
+            center: target, 
+            gestureHandling: 'greedy',
+            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: /*Unkown*/, east: /*Unkown*/}, strictBounds: true}});
+        map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
+        infoWindow = new google.maps.InfoWindow();
+        infoWindow.setPosition(target);
+        infoWindow.setContent("Random Position: " + lat + ", " + lng);
+        infoWindow.open(map);
         evt.preventDefault();
     }
-
     </script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ" async defer></script>
 </body>
 </html>
