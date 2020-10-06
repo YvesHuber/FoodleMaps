@@ -18,7 +18,7 @@
         <input type="submit" value="Anwenden">
     </form>
     <form id = "RandomButton">
-        <input type="submit" value="Random">
+        <input type="submit" value="Take Me Anyweare!">
     </form>
     <div id="map"></div>
     <script>
@@ -31,13 +31,13 @@
         var marker = new google.maps.Marker({position: target, map: map});
     }
     
-
     document.getElementById("SubmitButton").onsubmit = function (evt) { 	
         initMap();
         evt.preventDefault();
     }
+
     document.getElementById("RandomButton").onsubmit = function (evt) { 	
-        max = 100;
+        max = 85;
         min = 0;
         var target = new google.maps.LatLng(Math.random() * (max - min) + min, Math.random() * (max - min) + min);
         var map = new google.maps.Map(
