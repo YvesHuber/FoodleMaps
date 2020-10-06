@@ -13,8 +13,8 @@
     <h3>Foodle Maps {Demo}</h3>
     <!--The div element for the map -->
     <form  id="SubmitButton" style="display:inline">
-        <input type="text" name="DC1" placeholder="Decimal Coordinate 1" value="" size = "50">
-        <input type="text" name="DC2" placeholder="Decimal Coordinate 2" value="" size = "50">
+        <input type="text" name="DC1" placeholder="Coordinate S/N" value="" size = "50" id="DC1">
+        <input type="text" name="DC2" placeholder="Coordinate W/E" value="" size = "50" id="DC2">
         <input type="submit" value="Anwenden">
     </form>
     <form id = "RandomButton" style="display:inline">
@@ -22,25 +22,38 @@
     </form>
     <div id="map"></div>
     <script>
-    
+
+    function ConvertDMSToDEG(dms) {   
+        var dms_Array = dms.split(/[^\d\w\.]+/); 
+        var degrees = dms_Array[0];
+        var minutes = dms_Array[1];
+        var seconds = dms_Array[2];
+        var direction = dms_Array[3];
+
+        var deg = (Number(degrees) + Number(minutes)/60 + Number(seconds)/3600).toFixed(6);
+
+        if (direction == "S" || direction == "W") {
+            deg = deg * -1;
+        } // Don't do anything for N or E
+        return deg;
+    }
+
     // Initialize and add the map
-    function initMap() {
-        var target = new google.maps.LatLng(document.getElementByName("DC1").value, document.getElementByName("DC2").value);
+    
+    document.getElementById("SubmitButton").onsubmit = function (evt) {
+        var lat = ConvertDMSToDEG(document.getElementById("DC1").value);
+        var lng = ConvertDMSToDEG(document.getElementById("DC2").value);
+        var target = new google.maps.LatLng(lat, lng);
         var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: target});
         var marker = new google.maps.Marker({position: target, map: map});
-    }
-    
-    document.getElementById("SubmitButton").onsubmit = function (evt) { 	
-        initMap();
         evt.preventDefault();
     }
 
     document.getElementById("RandomButton").onsubmit = function (evt) { 	
         max = 85;
-        min = 0;
+        min = -85;
         var target = new google.maps.LatLng(Math.random() * (max - min) + min, Math.random() * (max - min) + min);
-        var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 10, center: target});
+        var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: target});
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
     }
