@@ -2,16 +2,35 @@
 <html> 
 <title>Foodle</title>
 <head>
-    <style>
-    #map {
-        height: 97%;  
-    }
-    html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-    </style>
+    <style type="text/css">
+        #map {
+          height: 97%;
+        }
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        #floating-panel {
+          position: absolute;
+          top: 10px;
+          left: 25%;
+          z-index: 5;
+          background-color: #fff;
+          padding: 5px;
+          border: 1px solid #999;
+          text-align: center;
+          font-family: "Roboto", "sans-serif";
+          line-height: 30px;
+          padding-left: 10px;
+        }
+      </style>  
+      
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&libraries=places&v=weekly"
+        defer
+      ></script>
 </head>
 <body>
     
@@ -19,16 +38,22 @@
     <form  id="SubmitButton" style="display:inline">
         <input type="text" name="DC1" placeholder="Coordinate S/N or DC 1" value="" size = "50" id="DC1">
         <input type="text" name="DC2" placeholder="Coordinate W/E or DC 2" value="" size = "50" id="DC2">
-        <input type="submit" value="Anwenden">
+        <input type="submit" value="Submit">
     </form>
     <form id = "RandomButton" style="display:inline">
         <input type="submit" value="Take Me Anyweare!">
+    </form>
+    <form  id="SearchButton" style="display:inline">
+        <input type="text" id ="SearchField" name="SearchField" placeholder="Search for Place" value="" id="DC1">
+        <input type="submit" value="Search">
     </form>
     <div id="map"></div>
     <script>
 
     let map, 
     infoWindow;
+    let service;
+    let marker;
 
     function ConvertDMSToDEG(dms) {   
         var dms_Array = dms.split(/[^\d\w\.]+/); 
@@ -56,24 +81,24 @@
             zoom: 10, 
             minzoom: 0, 
             center: target, 
-            gestureHandling: 'greedy',
-            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: 0/*Unkown*/, east: 0/*Unkown*/}, strictBounds: false}});
+            gestureHandling: 'greedy'
+        });
         map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
     }
-
+    
     document.getElementById("RandomButton").onsubmit = function (evt) { 	
-        maxminheight = 85;
-        maxminwidth = 178.01171875;
+        maxminheight = 90;
+        maxminwidth = 180;
         lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
         lat = Math.random() * (maxminheight - maxminheight * (-1)) + maxminheight * (-1);
         var target = new google.maps.LatLng(lat, lng);
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13, 
             center: target, 
-            gestureHandling: 'greedy',
-            restriction: {latLngBounds: {north: 83.86483689701898, south: -88.033203125, west: 0/*Unkown*/, east: 0/*Unkown*/}, strictBounds: true}});
+            gestureHandling: 'greedy'
+        });
         map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         infoWindow = new google.maps.InfoWindow();
@@ -83,6 +108,5 @@
         evt.preventDefault();
     }
     </script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ" async defer></script>
 </body>
 </html>
