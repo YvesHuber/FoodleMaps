@@ -31,7 +31,12 @@
             border:0;
             border-radius:2px;
         }
-
+        #back {
+            margin: 10px 10px 10px 10px;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
         #actions {
           position:absolute;
           bottom:2%;
@@ -70,14 +75,17 @@
     <!--The div element for the map -->
     <div id="map"></div>
 
+    <form id="back" onclick="history.back()">
+        <button id="BackButton">GO BACK</button>
+    </form>
     <div id="actions">
         <form  id="actionForm" style="display:inline">
             <input type="text" id="DC1" placeholder="Coordinate S/N or DC 1" value="">
             <input type="text" id="DC2" placeholder="Coordinate W/E or DC 2" value="">
             <button id="SubmitButton" type="submit">Goto</button>
-            <button  id = "RandomButton" type="submit">Take Me Anyweare!</button>
+            <button id = "RandomButton" type="submit">Take Me Anyweare!</button>
             <input type="text" id ="SearchField" placeholder="Search for Place" value="" id="DCo">
-            <button  id="SearchButton" type="submit">Search</button>
+            <button id="SearchButton" type="submit">Search</button>
             <select id="MapType">
                 <option value="roadmap">Roadmap</option>
                 <option value="satellite">Satellit</option>
@@ -153,7 +161,7 @@
     }
     
     document.getElementById("RandomButton").onclick = function (evt) { 	
-        maxminheight = 90;
+        maxminheight = 85;
         maxminwidth = 180;
         lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
         lat = Math.random() * (maxminheight - maxminheight * (-1)) + maxminheight * (-1);
