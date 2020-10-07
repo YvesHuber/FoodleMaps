@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodle Maps</title>
+</head>
+<body>
+    <script>
+        fetch("https://trueway-geocoding.p.rapidapi.com/Geocode?language=en&country=US&address=505%20Howard%20St%252C%20San%20Francisco", {
+	        "method": "GET",
+	        "headers": {
+		    "x-rapidapi-host": "trueway-geocoding.p.rapidapi.com",
+		    "x-rapidapi-key": "067f9bd1aemsh0e4a61e4cfc7512p1aed22jsndbca7644ec32"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.log(err);
+});
+    </script>
+</body>
+</html>
