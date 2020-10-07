@@ -2,100 +2,34 @@
 <html> 
 <title>Foodle</title>
 <head>
-    <style type="text/css">
-        #map {
-          height: 100%;
-        }
-        html,
-        body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        button {
-            background-color: rgb(150, 241, 253);
-            color: #000;
-            padding: 5px;
-            border:0;
-            border-radius:2px;
-        }      
-        input {
-            padding:5px;
-            border:0;
-            size: 30px;
-            border-radius: 2px;
-            box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-        }
-        select {
-            padding:5px;
-            border:0;
-            border-radius:2px;
-        }
-        #back {
-            margin: 10px 10px 10px 10px;
-            position: absolute;
-            left: 5px;
-            top: 5px;
-        }
-        #actions {
-            position: absolute;
-            bottom:10%;
-            color: #fff;
-            background-color: #4d90fe;
-            padding: 11px;
-
-            border: 1px solid transparent;
-            border-radius: 2px;
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-
-            outline: none;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-          
-            width:90%;
-            left:5%;
-            text-align:center;
-            text-decoration:none;
-
-            margin: 0px auto;
-            border-radius:10px;
-        }
-
-        #actions:hover{
-            background-color:#3B6EC2;
-        }
-      </style>  
-      
+    <link rel="stylesheet" href="Maps.css"> 
       <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&libraries=places&v=weekly"
         defer
       ></script>
 </head>
 <body>
-    <!--The div element for the map -->
     <div id="map"></div>
 
     <form id="back">
         <button id="BackButton" onclick="history.back()">GO BACK</button>
     </form>
-    <div id="actions">
-        <form  id="actionForm" style="display:inline">
-            <input type="text" id="DC1" placeholder="Coordinate S/N or DC 1" value="">
-            <input type="text" id="DC2" placeholder="Coordinate W/E or DC 2" value="">
-            <button id="SubmitButton" type="submit">Goto</button>
+    <form id="Searchbarform">
+        <input type="text" id ="Searchbar" placeholder="Search for Place" value="" id="DCo" size="50">
+        <button id="SearchButton" type="submit">Search</button>
+    </form>
+    <form id="SelectMap">
+        <select id="SelectType">
+            <option value="roadmap">Roadmap</option>
+            <option value="satellite">Satellite</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="terrain">Terrain</option>
+        </select>
+        <button  id="SelectButton" type="submit">Select</button>
+    </form>
+        <form id=RandomButtonForm>
             <button id = "RandomButton" type="submit">Take Me Anyweare!</button>
-            <input type="text" id ="SearchField" placeholder="Search for Place" value="" id="DCo">
-            <button id="SearchButton" type="submit">Search</button>
-            <select id="MapType">
-                <option value="roadmap">Roadmap</option>
-                <option value="satellite">Satellit</option>
-                <option value="hybrid">Hybrid</option>
-                <option value="terrain">Terrain</option>
-            </select>
-            <button  id="SelectButton" type="submit">Select</button>
         </form>
-            
-    </div>
     <script>
  
     let map;
@@ -120,29 +54,62 @@
 
     function ConvertDMSToDEG(dms) {   
         var dms_Array = dms.split(/[^\d\w\.]+/); 
-        var degrees = dms_Array[0];
-        var minutes = dms_Array[1];
-        var seconds = dms_Array[2];
-        var direction = dms_Array[3];
+        var degreesNS = dms_Array[0];
+        var minutesNS = dms_Array[1];
+        var secondsNS = dms_Array[2];
+        var directionNS = dms_Array[3];
+        var degreesEW = dms_Array[4];
+        var minutesEW = dms_Array[5];
+        var secondsEW = dms_Array[6];
+        var directionEW = dms_Array[7];
 
-        var deg = (Number(degrees) + Number(minutes) /60 + Number(seconds) / 3600).toFixed(6);
+        var deg = [];
+        var degNS = (Number(degreesNS) + Number(minutesNS) /60 + Number(secondsNS) / 3600).toFixed(6);
+        var degEW = (Number(degreesEW) + Number(minutesEW) /60 + Number(secondsEW) / 3600).toFixed(6);
 
-        if (direction == "S" || direction == "W") {
-            deg = deg * -1;
+        if (directionNS == "S" || directionNS == "W") {
+            degNS = degNS * -1;
         }
-        if(direction != "S" && direction != "W" && direction != "N" && direction != "E" && direction != "O"){
-            deg = dms;
+        if (directionEW == "S" || directionEW == "W") {
+            degEW = degEW * -1;
         }
+        if(directionNS != "S" && directionNS != "W" && directionNS != "N" && directionNS != "E" && directionNS != "O"){
+            degNS = dms_Array[0];
+        }
+        if(directionEW != "S" && directionEW != "W" && directionEW != "N" && directionEW != "E" && directionEW != "O"){
+            degEW = dms_Array[1];
+        }
+        deg[0] = degNS;
+        deg[1] = degEW;
         return deg;
     }
 
+    document.getElementById("SearchButton").onclick = function (evt) {
+        input = document.getElementById("Searchbar").value;
+        latlng = [];
+        latlng = ConvertDMSToDEG(input);
+        lat = latlng[0];
+        lng = latlng[1];
+        console.log(lat + ";"+ lng);
+        target = new google.maps.LatLng(lat, lng);
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10, 
+            center: target, 
+            gestureHandling: 'greedy',
+            mapTypeId: document.getElementById('SelectType').value
+        });
+        mapinitchecker = true;
+        map.setOptions({minZoom: 3, maxZoom: 15});
+        var marker = new google.maps.Marker({position: target, map: map});
+        evt.preventDefault();
+    }
     document.getElementById("SelectButton").onclick = function (evt) {
         if(mapinitchecker == true){
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 10, 
                 center: target, 
                 gestureHandling: 'greedy',
-                mapTypeId: document.getElementById('MapType').value
+                mapTypeId: document.getElementById('SelectType').value
             });
             mapinitchecker = true;
             map.setOptions({minZoom: 3, maxZoom: 15});
@@ -155,7 +122,7 @@
         evt.preventDefault();
     }
 
-    document.getElementById("SubmitButton").onclick = function (evt) {
+    /*document.getElementById("SubmitButton").onclick = function (evt) {
         var lat = ConvertDMSToDEG(document.getElementById("DC1").value);
         var lng = ConvertDMSToDEG(document.getElementById("DC2").value);
         console.log(lat + ";"+ lng);
@@ -170,7 +137,7 @@
         map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
-    }
+    }*/
     
     document.getElementById("RandomButton").onclick = function (evt) { 	
         maxminheight = 85;
@@ -182,7 +149,7 @@
             zoom: 13, 
             center: target, 
             gestureHandling: 'greedy',
-            mapTypeId: document.getElementById('MapType').value
+            
         });
         mapinitchecker = true;
         map.setOptions({minZoom: 3, maxZoom: 15});
