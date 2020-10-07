@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Directions Service</title>
+    <title>Direction Map API</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap&libraries=&v=weekly"
@@ -44,6 +44,7 @@
           zoom: 7,
           center: { lat: 41.85, lng: -87.65 },
         });
+        map.setOptions({minzoom:3,maxzoom:15})
         directionsRenderer.setMap(map);
 
         const onChangeHandler = function () {
@@ -81,6 +82,10 @@
   </head>
   <body>
     <div id="floating-panel">
+          <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+          </form>
+    
       <b>Start: </b>
       <select id="start">
         <option value="chicago, il">Chicago</option>

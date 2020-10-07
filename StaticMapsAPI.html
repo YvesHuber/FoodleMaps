@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html> 
+<title>Static Maps API</title>
+<head>
+    <style>
+        img.one{
+        height:100%;
+        width:100%;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="floating-panel">
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    <div style="width:900px; height:760px; margin:80px auto;">
+        <img class ="one"src="https://maps.googleapis.com/maps/api/staticmap?center=51.4082343,30.0558434&amp;zoom=10&amp;size=1000x1000&amp;markers=color:blue|location:51.408365,30.055867&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc" alt="Pripyat Amusement Park" class="static-map">
+    </div>  
+</body>
+</html>
