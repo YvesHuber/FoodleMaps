@@ -1,12 +1,21 @@
 
+h1 {
+  
+  position: absolute;
+  top: 108px;
+  left: calc(50% - 272px/2);
+  bottom: 38px;
+ 
+}
 b      {color: rgb(66, 133, 244);}
 y      {color: rgb(253, 215, 2);}
 r       {color: rgb(219, 68, 55);}
 g       {color: rgb(15, 157, 88);}
 e       {color: grey;}
-c       {font-family: 'Roboto', sans-serif;}
+c       {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
 
-h1   { font-size: 55px;
+
+h1   { font-size: 100px;
        line-height: 0;}
 
 ul {
@@ -20,12 +29,8 @@ ul {
   li {float: left;}
   
   li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 8px 10px;
-    text-decoration: none;
+   -webkit-mask-position-x: 50%;
+   -webkit-mask-position-y: 50%;
   }
   
   li a:hover {background-color: rgb(66, 133, 244);}
-
