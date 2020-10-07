@@ -2,4 +2,4 @@
 
 ## This directory
 
-Here is all the Code needed for the Website
+Here are all the Codes needed for the Website
