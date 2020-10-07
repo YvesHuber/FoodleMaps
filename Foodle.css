@@ -31,19 +31,19 @@ icon2 {
   cursor: pointer;
   height: var(--icon2-size);
   opacity: 1;
-  
   position: relative;
-  
 }
-  
-
+icon3 {
+  left: calc(51% - 272px/2);  
+  top: 250px;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: var(--icon3-size);
+  opacity: 1;
+  position: relative;
+}
 h1   { font-size: 100px;
        line-height: 0;}
-
-
-
-
-
   footer {
     position: fixed;
     padding: .6em;
