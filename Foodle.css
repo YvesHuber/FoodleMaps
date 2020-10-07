@@ -49,8 +49,21 @@ ul {
   li {float: left;}
   
   li a {
-   -webkit-mask-position-x: 50%;
-   -webkit-mask-position-y: 50%;
+   display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
   }
   
   li a:hover {background-color: rgb(66, 133, 244);}
+
+body {padding-bottom: 6em;}
+
+ps { 
+    position: fixed;
+    padding: .6em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
