@@ -17,12 +17,6 @@ g       {color: rgb(15, 157, 88);}
 c       {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
     h3 {position: absolute;
       top: 250px;}  
-
-<<<<<<< Updated upstream
-      p1 {text-align: center;
-        position: absolute;
-        top: 300px;}   
-=======
       p1 {  position: absolute;
         top: 408px;
         left: calc(25% - 272px/2);
@@ -35,8 +29,6 @@ c       {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
         right: calc(45% - 272px/2);
         bottom: 38px;
       }
->>>>>>> Stashed changes
-
 footer {
     position: fixed;
     padding: .6em;
