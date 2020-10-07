@@ -4,7 +4,7 @@
 <head>
     <style type="text/css">
         #map {
-          height: 97%;
+          height: 100%;
         }
         html,
         body {
@@ -12,18 +12,52 @@
           margin: 0;
           padding: 0;
         }
-        #floating-panel {
-          position: absolute;
-          top: 10px;
-          left: 25%;
-          z-index: 5;
-          background-color: #fff;
-          padding: 5px;
-          border: 1px solid #999;
-          text-align: center;
-          font-family: "Roboto", "sans-serif";
-          line-height: 30px;
-          padding-left: 10px;
+        button {
+            background-color: rgb(150, 241, 253);
+            color: #000;
+            padding: 5px;
+            border:0;
+            border-radius:2px;
+        }      
+        input {
+            padding:5px;
+            border:0;
+            size: 30px;
+            border-radius: 2px;
+            box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+        }
+        select {
+            padding:5px;
+            border:0;
+            border-radius:2px;
+        }
+
+        #actions {
+          position:absolute;
+          bottom:2%;
+          color: #fff;
+          background-color: #4d90fe;
+          padding: 11px;
+
+          border: 1px solid transparent;
+          border-radius: 2px;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+
+          outline: none;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          
+          width:90%;
+          left:5%;
+          text-align:center;
+          text-decoration:none;
+
+          margin: 0px auto;
+          border-radius:10px;
+        }
+
+        #actions:hover{
+            background-color:#3B6EC2;
         }
       </style>  
       
@@ -33,27 +67,35 @@
       ></script>
 </head>
 <body>
-    
     <!--The div element for the map -->
-    <form  id="SubmitButton" style="display:inline">
-        <input type="text" name="DC1" placeholder="Coordinate S/N or DC 1" value="" size = "50" id="DC1">
-        <input type="text" name="DC2" placeholder="Coordinate W/E or DC 2" value="" size = "50" id="DC2">
-        <input type="submit" value="Submit">
-    </form>
-    <form id = "RandomButton" style="display:inline">
-        <input type="submit" value="Take Me Anyweare!">
-    </form>
-    <form  id="SearchButton" style="display:inline">
-        <input type="text" id ="SearchField" name="SearchField" placeholder="Search for Place" value="" id="DC1">
-        <input type="submit" value="Search">
-    </form>
     <div id="map"></div>
-    <script>
 
-    let map, 
-    infoWindow;
+    <div id="actions">
+        <form  id="actionForm" style="display:inline">
+            <input type="text" id="DC1" placeholder="Coordinate S/N or DC 1" value="">
+            <input type="text" id="DC2" placeholder="Coordinate W/E or DC 2" value="">
+            <button id="SubmitButton" type="submit">Goto</button>
+            <button  id = "RandomButton" type="submit">Take Me Anyweare!</button>
+            <input type="text" id ="SearchField" placeholder="Search for Place" value="" id="DCo">
+            <button  id="SearchButton" type="submit">Search</button>
+            <select id="MapType">
+                <option value="roadmap">Roadmap</option>
+                <option value="satellite">Satellit</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="terrain">Terrain</option>
+            </select>
+            <button  id="SelectButton" type="submit">Select</button>
+        </form>
+            
+    </div>
+    <script>
+ 
+    let map;
+    let infoWindow;
     let service;
     let marker;
+    let mapinitchecker = false;
+    let target;
 
     function ConvertDMSToDEG(dms) {   
         var dms_Array = dms.split(/[^\d\w\.]+/); 
@@ -73,32 +115,56 @@
         return deg;
     }
 
-    document.getElementById("SubmitButton").onsubmit = function (evt) {
+    document.getElementById("SelectButton").onclick = function (evt) {
+        if(mapinitchecker == true){
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10, 
+                center: target, 
+                gestureHandling: 'greedy',
+                mapTypeId: document.getElementById('MapType').value
+            });
+            mapinitchecker = true;
+            map.setOptions({minZoom: 3, maxZoom: 15});
+            var marker = new google.maps.Marker({position: target, map: map});
+            evt.preventDefault();
+        }
+        else{
+            console.log("Map isnt init");
+            return;
+        }
+        evt.preventDefault();
+    }
+
+    document.getElementById("SubmitButton").onclick = function (evt) {
         var lat = ConvertDMSToDEG(document.getElementById("DC1").value);
         var lng = ConvertDMSToDEG(document.getElementById("DC2").value);
-        var target = new google.maps.LatLng(lat, lng);
+        console.log(lat + ";"+ lng);
+        target = new google.maps.LatLng(lat, lng);
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10, 
-            minzoom: 0, 
             center: target, 
-            gestureHandling: 'greedy'
+            gestureHandling: 'greedy',
+            mapTypeId: document.getElementById('MapType').value
         });
+        mapinitchecker = true;
         map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
     }
     
-    document.getElementById("RandomButton").onsubmit = function (evt) { 	
+    document.getElementById("RandomButton").onclick = function (evt) { 	
         maxminheight = 90;
         maxminwidth = 180;
         lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
         lat = Math.random() * (maxminheight - maxminheight * (-1)) + maxminheight * (-1);
-        var target = new google.maps.LatLng(lat, lng);
+        target = new google.maps.LatLng(lat, lng);
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13, 
             center: target, 
-            gestureHandling: 'greedy'
+            gestureHandling: 'greedy',
+            mapTypeId: document.getElementById('MapType').value
         });
+        mapinitchecker = true;
         map.setOptions({minZoom: 3, maxZoom: 15});
         var marker = new google.maps.Marker({position: target, map: map});
         infoWindow = new google.maps.InfoWindow();
