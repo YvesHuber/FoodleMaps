@@ -15,8 +15,7 @@ y      {color: rgb(253, 215, 2);}
 r       {color: rgb(219, 68, 55);}
 g       {color: rgb(15, 157, 88);}
 c       {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
-    h3 {position: absolute;
-      top: 250px;}  
+
       p1 {  position: absolute;
         top: 408px;
         left: calc(25% - 272px/2);
