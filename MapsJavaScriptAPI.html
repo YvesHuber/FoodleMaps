@@ -38,27 +38,27 @@
             top: 5px;
         }
         #actions {
-          position:absolute;
-          bottom:2%;
-          color: #fff;
-          background-color: #4d90fe;
-          padding: 11px;
+            position: absolute;
+            bottom:10%;
+            color: #fff;
+            background-color: #4d90fe;
+            padding: 11px;
 
-          border: 1px solid transparent;
-          border-radius: 2px;
-          box-sizing: border-box;
-          -moz-box-sizing: border-box;
+            border: 1px solid transparent;
+            border-radius: 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
 
-          outline: none;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
           
-          width:90%;
-          left:5%;
-          text-align:center;
-          text-decoration:none;
+            width:90%;
+            left:5%;
+            text-align:center;
+            text-decoration:none;
 
-          margin: 0px auto;
-          border-radius:10px;
+            margin: 0px auto;
+            border-radius:10px;
         }
 
         #actions:hover{
@@ -75,8 +75,8 @@
     <!--The div element for the map -->
     <div id="map"></div>
 
-    <form id="back" onclick="history.back()">
-        <button id="BackButton">GO BACK</button>
+    <form id="back">
+        <button id="BackButton" onclick="history.back()">GO BACK</button>
     </form>
     <div id="actions">
         <form  id="actionForm" style="display:inline">
@@ -104,6 +104,19 @@
     let marker;
     let mapinitchecker = false;
     let target;
+
+    function loadMapatstart(){
+        target = new google.maps.LatLng(0, 0);
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 1, 
+            center: target, 
+            gestureHandling: 'greedy',
+            mapTypeId: document.getElementById('MapType').value
+        });
+        mapinitchecker = true;
+        map.setOptions({minZoom: 3, maxZoom: 15});
+        var marker = new google.maps.Marker({position: target, map: map});
+    }
 
     function ConvertDMSToDEG(dms) {   
         var dms_Array = dms.split(/[^\d\w\.]+/); 
@@ -138,7 +151,6 @@
         }
         else{
             console.log("Map isnt init");
-            return;
         }
         evt.preventDefault();
     }
