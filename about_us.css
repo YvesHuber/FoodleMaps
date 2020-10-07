@@ -1,3 +1,6 @@
+body{
+  background-image: url(Background.jpg);
+}
 h1 {  position: absolute;
   top: 108px;
   left: calc(50% - 272px/2);
@@ -40,4 +43,5 @@ footer {
     padding: .6em;
     bottom: 0;
     left: 0;
-    right: 0;}        
+    right: 0;}       
+   

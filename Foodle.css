@@ -5,7 +5,7 @@ h1 {
   
   position: absolute;
   top: 108px;
-  left: calc(50% - 272px/2);
+  left: calc(50% - 272px/1.5);
   bottom: 38px;
  
 }
@@ -16,7 +16,7 @@ g       {color: rgb(15, 157, 88);}
 e       {color: grey;}
 c       {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
 icon1 {
-  left: calc(45% - 272px/2);  
+  left: calc(45% - 272px/1.5);  
   top: 250px;
   
   box-sizing: border-box;
@@ -25,7 +25,7 @@ icon1 {
  
 }
 icon2 {
-  left: calc(48% - 272px/2);  
+  left: calc(48% - 272px/1.5);  
   top: 250px;
   box-sizing: border-box;
   cursor: pointer;
@@ -34,7 +34,7 @@ icon2 {
   position: relative;
 }
 icon3 {
-  left: calc(51% - 272px/2);  
+  left: calc(51% - 272px/1.5);  
   top: 250px;
   box-sizing: border-box;
   cursor: pointer;
@@ -51,3 +51,13 @@ h1   { font-size: 100px;
     left: 0;
     right: 0;
   }
+  h2{  position: absolute;
+    top: 500px;
+    left: calc(50% - 272px/2);
+    bottom: 38px;
+    
+    font-size: 50px;
+    line-height: 0;}
+    a{
+      color: white;
+    } 
