@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="about_us.css">
     <title>Direction Map API</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
@@ -25,9 +26,9 @@
       #floating-panel {
         position: absolute;
         top: 10px;
-        left: 25%;
+        left: 0%;
         z-index: 5;
-        background-color: #fff;
+        background-color: black;
         padding: 5px;
         border: 1px solid #999;
         text-align: center;
@@ -81,10 +82,24 @@
     </script>
   </head>
   <body>
+    <style>
+    #Backbutton{
+      background-color: black;
+      color: white;
+          }
+          #end{
+      background-color: black;
+      color: white;
+          }
+          #start{
+      background-color: black;
+      color: white;
+          }
+    </style>
     <div id="floating-panel">
-          <form>
-            <input type="button" value="Go back!" onclick="history.back()">
-          </form>
+      <form>
+        <input type="button" id= "BackButton" value="Go back!" style = "width:150px ; height: 50px;" onclick="history.back()">
+    </form>
     
       <b>Start: </b>
       <select id="start">
