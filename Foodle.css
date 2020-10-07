@@ -13,7 +13,27 @@ r       {color: rgb(219, 68, 55);}
 g       {color: rgb(15, 157, 88);}
 e       {color: grey;}
 c       {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
-
+icon1 {
+  left: calc(50% - 272px/2);  
+  top: 250px;
+  
+  box-sizing: border-box;
+  color: rgb(var(--icon1-title-color));
+  cursor: pointer;
+  height: var(--icon1-size);
+  margin-bottom: var(--icon1-margin);
+  opacity: 1;
+  padding-top: var(--icon1-padding-top);
+  position: relative;
+  transition-property: background, background-color, border-color, box-shadow, opacity, filter;
+  width: var(--icon1-size);}
+  
+  .image1{
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+   }
 
 h1   { font-size: 100px;
        line-height: 0;}
