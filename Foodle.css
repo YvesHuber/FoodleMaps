@@ -64,7 +64,7 @@ h1   { font-size: 100px;
     } 
   h3{  position: absolute;
     top: 370px;
-    left: calc(41.5% - 272px/2);
+    left: calc(43% - 272px/2);
     bottom: 38px;
     font-size: 15px;
     line-height: 0;
