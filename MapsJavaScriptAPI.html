@@ -36,9 +36,9 @@
     let infoWindow;
     let service;
     let marker;
-    let mapinitchecker = false;
     let target;
-    
+    let markerset = false;
+
     function initMap(target, zoom){
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: zoom, 
@@ -46,7 +46,6 @@
             gestureHandling: 'greedy',
             mapTypeId: document.getElementById('SelectType').value
         });
-        mapinitchecker = true;
         map.setOptions({minZoom: 3, maxZoom: 20});
     }
 
@@ -118,25 +117,20 @@
         }
         map.setOptions({center: target, zoom: 8}),
         marker = new google.maps.Marker({position: target, map: map});
+        markerset = true;
         document.getElementById("Searchbar").value = "";
         evt.preventDefault();
     }
     
     document.getElementById("SelectButton").onclick = function (evt) {
-        if(mapinitchecker == true){
-            map.setOptions({
-                mapTypeId: document.getElementById('SelectType').value,
-            })
-            evt.preventDefault();
-        }
-        else{
-            console.log("Map isn't init");
-            evt.preventDefault();
-        }
+        map.setOptions({mapTypeId: document.getElementById('SelectType').value});
+        evt.preventDefault();
     }
     
-    document.getElementById("RandomButton").onclick = function (evt) { 	
-        marker.setMap(null);
+    document.getElementById("RandomButton").onclick = function (evt) { 
+        if(markerset == true){
+            marker.setMap(null);
+        }	
         maxminheight = 85;
         maxminwidth = 180;
         lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
@@ -146,7 +140,7 @@
         marker = new google.maps.Marker({position: target, map: map});
         infoWindow = new google.maps.InfoWindow();
         infoWindow.setPosition(target);
-        infoWindow.setContent("Random Position: " + lat + ", " + lng);
+        infoWindow.setContent("Random Position: " + Math.round(lat) + ", " + Math.round(lng));
         infoWindow.open(map);
         evt.preventDefault();
     }
