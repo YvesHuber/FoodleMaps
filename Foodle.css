@@ -14,14 +14,13 @@ html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-    }
+  }
 h1 {
   position: absolute;
   top: 108px;
   left: calc(50% - 272px/1.5);
   bottom: 38px; 
-<<<<<<< Updated upstream
-}
+  }
 b      {color: rgb(66, 133, 244);}
 y      {color: rgb(253, 215, 2);}
 r      {color: rgb(219, 68, 55);}
@@ -47,7 +46,6 @@ icon3 {
   top: 250px;
   cursor: pointer;
   position: relative;
-<<<<<<< Updated upstream
 }
 h1   
     { font-size: 100px;
