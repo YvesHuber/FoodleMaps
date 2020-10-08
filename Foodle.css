@@ -14,7 +14,7 @@ html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-     }
+    }
 h1 {
   position: absolute;
   top: 108px;
@@ -27,27 +27,14 @@ y      {color: rgb(253, 215, 2);}
 r      {color: rgb(219, 68, 55);}
 g      {color: rgb(15, 157, 88);}
 e      {color: grey;}
-c      {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
-=======
-   }
-b {color: rgb(66, 133, 244);}
-y {color: rgb(253, 215, 2);}
-r {color: rgb(219, 68, 55);}
-g {color: rgb(15, 157, 88);}
-e {color: grey;}
-c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
->>>>>>> Stashed changes
+c      {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}ashed changes
 icon1 {
   left: calc(45% - 272px/1.5);  
   top: 250px;
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
-<<<<<<< Updated upstream
 }
-=======
-      }
->>>>>>> Stashed changes
 icon2 {
   left: calc(48% - 272px/1.5);  
   top: 250px;
@@ -66,20 +53,17 @@ h1
     { font-size: 100px;
     line-height: 0;
     }
-=======
-      }
   h1 {
     font-size: 100px;
     line-height: 0;
-     }
->>>>>>> Stashed changes
+    }
   footer {
     position: fixed;
     padding: .6em;
     bottom: 0;
     left: 0;
     right: 0;
-         }
+    }
   h2 {
     position: absolute;
     top: 500px;
@@ -87,14 +71,14 @@ h1
     bottom: 38px;
     font-size: 50px;
     line-height: 0;
-     }
+    }
   a:hover {
     color: red;
-          }
+    }
 
   a{
     color: white;
-   }
+    }
 
   h3 {
     position: absolute;
@@ -103,9 +87,9 @@ h1
     bottom: 38px;
     font-size: 15px;
     line-height: 0;
-     }
+    }
 
-  z {
+    z {
     position: relative;
     top: 250px;
     left: 43.7%;
@@ -114,7 +98,7 @@ h1
     line-height: 0;
     font-weight: bold;
     }
-  x {
+    x {
     position: relative;
     top: 240px;
     left: 55.5%;
@@ -122,10 +106,4 @@ h1
     font-size: 15px;
     line-height: 0;
     font-weight: bold;
-<<<<<<< Updated upstream
-  }
-=======
     }
-  
-  
->>>>>>> Stashed changes
