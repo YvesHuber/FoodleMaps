@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html> 
-    <link rel="stylesheet" href="about_us.css">
+    <link rel="stylesheet" href="static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>>
+    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>
     <title>Static Maps API</title>
 <head>
-    <link rel="stylesheet" href="about_us.css">
-        <style>
-            img.one{
-            height:100%;
-            width:100%;
-            text-align: center;
-            }
-        </style>
-        <style>
-            #BackButton{
-                background-color: black;
-                color: white;
-            }
-        </style>
-</head>
 <body>
     <div id="floating-panel">
             <form id="back">
                 <button type="submit" id="BackButton" formaction="FoodleMapsWeb.html"><i class="fa fa-arrow-left"></i></button>
             </form>
-        <img src = "https://maps.googleapis.com/maps/api/staticmap?center=47.3666700,8.5500000&amp;zoom=10&amp;size=1920x1920&scale2&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc">
+            <form id="MapphotoForm">
+                <img id="Mapphoto" src = "https://maps.googleapis.com/maps/api/staticmap?center=47.3666700,8.5500000&amp;zoom=10&amp;size=1920x1080&amp;scale3&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc">
+            </form>
             <script type="text/javascript" id = "mapimg">
             /*
             var lat = "85"
