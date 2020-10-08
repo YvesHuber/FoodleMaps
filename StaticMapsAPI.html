@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html> 
-    <link rel="icon" type="image/gif" href="Logo1.png"  width="60" height="60"/>>
+    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>>
     <title>Static Maps API</title>
 <head>
     <link rel="stylesheet" href="about_us.css">
@@ -10,7 +10,7 @@
             width:100%;
             text-align: center;
             }
-    </style>
+        </style>
         <style>
             #BackButton{
                 background-color: black;
@@ -19,20 +19,18 @@
         </style>
 </head>
 <body>
-<div id="floating-panel">
-    <form>
-        <input type="button" id= "BackButton" value="Go back!" style = "width:150px ; height: 50px;" onclick="history.back()">
-    </form>
-        <form id=RandomButtonForm>
-            <button id = "RandomButton" type="submit">Take Me Anyweare!</button>
+    <div id="floating-panel">
+        <form>
+            <input type="button" id= "BackButton" value="Go back!" style = "width:150px ; height: 50px;" onclick="history.back()">
         </form>
-        <script type="text/javascript" id = "mapimg">
+        <img src = "https://maps.googleapis.com/maps/api/staticmap?center=47.3666700,8.5500000&amp;zoom=10&amp;size=1920x1920&scale2&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc">
+            <script type="text/javascript" id = "mapimg">
+            /*
             var lat = "85"
             var lng = "180"
             var url = "https://maps.googleapis.com/maps/api/staticmap?center="
             var url2 = "&amp;zoom=2&amp;size=1000x1000&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc"
             document.write('<img src="'+ url + lat +  lng + url2 + '">');
-
             document.getElementById("RandomButton").onclick = function (evt) {
             maxminheight = 85;
             maxminwidth = 180;
@@ -41,6 +39,7 @@
             document.write('<img src="'+ url + lat + "," + lng + url2 + '">');
             evt.preventDefault();
     }
-</script>
+            */
+            </script>
 </body>
 </html>
