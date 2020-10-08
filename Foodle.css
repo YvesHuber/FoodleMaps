@@ -24,17 +24,16 @@ h1 {
 }
 b      {color: rgb(66, 133, 244);}
 y      {color: rgb(253, 215, 2);}
-r       {color: rgb(219, 68, 55);}
-g       {color: rgb(15, 157, 88);}
-e       {color: grey;}
-c       {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
+r      {color: rgb(219, 68, 55);}
+g      {color: rgb(15, 157, 88);}
+e      {color: grey;}
+c      {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
 icon1 {
   left: calc(45% - 272px/1.5);  
   top: 250px;
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
- 
 }
 icon2 {
   left: calc(48% - 272px/1.5);  
@@ -49,8 +48,10 @@ icon3 {
   cursor: pointer;
   position: relative;
 }
-h1   { font-size: 100px;
-       line-height: 0;}
+h1   
+    { font-size: 100px;
+    line-height: 0;
+    }
   footer {
     position: fixed;
     padding: .6em;
@@ -98,5 +99,3 @@ h1   { font-size: 100px;
     line-height: 0;
     font-weight: bold;
   }
-  
-  

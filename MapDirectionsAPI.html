@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="about_us.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>>
+    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>
     <title>Direction Map API</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
@@ -52,6 +52,7 @@
     </form>  
     <div id="map"></div>
     <script>
+      let map;
       function initMap() {
         const directionsService = new google.maps.DirectionsService();
         const directionsRenderer = new google.maps.DirectionsRenderer();
