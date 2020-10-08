@@ -12,7 +12,7 @@
     <div id="map"></div>
 
     <form id="back">
-        <button id="BackButton" onclick="history.back()">GO BACK</button>
+        <input type="button" id="BackButton" value="Go back" onclick="history.back()"></input>
     </form>
     <form id="Searchbarform">
         <input type="text" id ="Searchbar" placeholder="Search for Place" value="" id="DCo" size="50">
@@ -103,6 +103,7 @@
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
     }
+    
     document.getElementById("SelectButton").onclick = function (evt) {
         if(mapinitchecker == true){
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -121,23 +122,6 @@
         }
         evt.preventDefault();
     }
-
-    /*document.getElementById("SubmitButton").onclick = function (evt) {
-        var lat = ConvertDMSToDEG(document.getElementById("DC1").value);
-        var lng = ConvertDMSToDEG(document.getElementById("DC2").value);
-        console.log(lat + ";"+ lng);
-        target = new google.maps.LatLng(lat, lng);
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10, 
-            center: target, 
-            gestureHandling: 'greedy',
-            mapTypeId: document.getElementById('MapType').value
-        });
-        mapinitchecker = true;
-        map.setOptions({minZoom: 3, maxZoom: 15});
-        var marker = new google.maps.Marker({position: target, map: map});
-        evt.preventDefault();
-    }*/
     
     document.getElementById("RandomButton").onclick = function (evt) { 	
         maxminheight = 85;
