@@ -1,7 +1,19 @@
 body{
   background-color: black;
   background-image: url(Background.jpg);
+  background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
 }
+
 h1 {
   
   position: absolute;
@@ -71,7 +83,7 @@ h1   { font-size: 100px;
     }
   z{
     position: relative;
-    top: 243.3px;
+    top: 250px;
     left: 43.7%;
     bottom: 38px;
     font-size: 15px;
@@ -80,7 +92,7 @@ h1   { font-size: 100px;
   }
   x{
     position: relative;
-    top: 229px;
+    top: 235px;
     left: 55.5%;
     bottom: 38px;
     font-size: 15px;
