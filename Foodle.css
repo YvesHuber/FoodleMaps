@@ -69,3 +69,21 @@ h1   { font-size: 100px;
     font-size: 15px;
     line-height: 0;
     }
+  z{
+    position: relative;
+    top: 243.3px;
+    left: 43.7%;
+    bottom: 38px;
+    font-size: 15px;
+    line-height: 0;
+    font-weight: bold;
+  }
+  x{
+    position: relative;
+    top: 229px;
+    left: 55.5%;
+    bottom: 38px;
+    font-size: 15px;
+    line-height: 0;
+    font-weight: bold;
+  }
