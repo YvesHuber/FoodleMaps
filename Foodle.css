@@ -74,8 +74,8 @@ h1   { font-size: 100px;
       color: white;
     } 
   h3{  position: absolute;
-    top: 370px;
-    left: calc(43% - 272px/2);
+    top: 399px;
+    left: 36%;
     bottom: 38px;
     font-size: 15px;
     line-height: 0;
