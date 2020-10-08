@@ -39,17 +39,20 @@
     let mapinitchecker = false;
     let target;
     
-    window.addEventListener("load", function(){
-        console.log("Document load");
-        target = new google.maps.LatLng(0, 0);
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 1, 
+    function initMap(target, zoom){
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: zoom, 
             center: target, 
             gestureHandling: 'greedy',
             mapTypeId: document.getElementById('SelectType').value
         });
         mapinitchecker = true;
-        map.setOptions({minZoom: 3, maxZoom: 12});
+        map.setOptions({minZoom: 3, maxZoom: 20});
+    }
+
+    window.addEventListener("load", function(){
+        target = new google.maps.LatLng(0, 0);
+        initMap(target, 1)
     });
 
     function ConvertDMSToDEG(dms) {   
@@ -94,37 +97,24 @@
         latlng = ConvertDMSToDEG(input);
         lat = latlng[0];
         lng = latlng[1];
-        console.log(lat + ";"+ lng);
         target = new google.maps.LatLng(lat, lng);
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10, 
-            center: target, 
-            gestureHandling: 'greedy',
-            mapTypeId: document.getElementById('SelectType').value
-        });
-        mapinitchecker = true;
-        map.setOptions({minZoom: 3, maxZoom: 12});
-        var marker = new google.maps.Marker({position: target, map: map});
+        map.setOptions({center: target, zoom: 8}),
+        marker = new google.maps.Marker({position: target, map: map});
+        document.getElementById("Searchbar").value = "";
         evt.preventDefault();
     }
     
     document.getElementById("SelectButton").onclick = function (evt) {
         if(mapinitchecker == true){
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10, 
-                center: target, 
-                gestureHandling: 'greedy',
-                mapTypeId: document.getElementById('SelectType').value
-            });
-            mapinitchecker = true;
-            map.setOptions({minZoom: 3, maxZoom: 12});
-            var marker = new google.maps.Marker({position: target, map: map});
+            map.setOptions({
+                mapTypeId: document.getElementById('SelectType').value,
+            })
             evt.preventDefault();
         }
         else{
-            console.log("Map isnt init");
+            console.log("Map isn't init");
+            evt.preventDefault();
         }
-        evt.preventDefault();
     }
     
     document.getElementById("RandomButton").onclick = function (evt) { 	
@@ -133,15 +123,8 @@
         lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
         lat = Math.random() * (maxminheight - maxminheight * (-1)) + maxminheight * (-1);
         target = new google.maps.LatLng(lat, lng);
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 13, 
-            center: target, 
-            gestureHandling: 'greedy',
-            mapTypeId: document.getElementById('SelectType').value
-        });
-        mapinitchecker = true;
-        map.setOptions({minZoom: 3, maxZoom: 12});
-        var marker = new google.maps.Marker({position: target, map: map});
+        map.setOptions({center: target, zoom: 8});
+        marker = new google.maps.Marker({position: target, map: map});
         infoWindow = new google.maps.InfoWindow();
         infoWindow.setPosition(target);
         infoWindow.setContent("Random Position: " + lat + ", " + lng);
