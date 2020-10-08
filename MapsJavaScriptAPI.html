@@ -59,7 +59,10 @@
     });
 
     function checkifdc(input){
-        var input_Array = input.split(", ");
+        var input_Array = input.split(",");
+        if(input_Array[0] == input){
+            input_Array = input.split(" ");
+        }
         var directionNS = input_Array[3];
         var directionEW = input_Array[7];
         var checking1 = false;
