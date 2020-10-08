@@ -11,17 +11,14 @@ body{
   padding: 0;
   position: fixed;
   top: 0;
-  transition: opacity 1ms;
   width: 100%;
 }
 
 h1 {
-  
   position: absolute;
   top: 108px;
   left: calc(50% - 272px/1.5);
-  bottom: 38px;
- 
+  bottom: 38px; 
 }
 b      {color: rgb(66, 133, 244);}
 y      {color: rgb(253, 215, 2);}
