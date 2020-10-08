@@ -31,6 +31,9 @@
         <form id="RandomButtonForm">
             <button id = "RandomButton" type="submit">Take Me Anyware <i class="fa fa-arrow-right"></i></button>
         </form>
+        <form id="PositionForm">
+            <p id="Position"><i class="fa fa-crosshairs"></i> Current center: <span id="CurrentPosition">0; 0</span></p>
+        </form>
     <script>
  
     let map;
@@ -48,6 +51,9 @@
             mapTypeId: document.getElementById('SelectType').value
         });
         map.setOptions({minZoom: 3, maxZoom: 20});
+        map.addListener('center_changed', function(){
+            document.getElementById("CurrentPosition").innerHTML = Math.round(map.data.map.center.lat()) + "; " + Math.round(map.data.map.center.lng());
+        });
     }
 
     window.addEventListener("load", function(){
@@ -97,11 +103,10 @@
             return;
         }
         if(ConvertDMSToDEG(input) == false){ //input is non numeric
-            console.log("Non numeric");
             geocoder = new google.maps.Geocoder();
             geocoder.geocode({'address': input}, function(results, status){
                 if(status !== google.maps.GeocoderStatus.OK){
-                    alert("Places cannot be used in moment because: " + status);
+                    alert("Place searching cannot be used in moment because: " + status);
                 }   
                 if (status == google.maps.GeocoderStatus.OK) {
                     var target = (results[0].geometry);
