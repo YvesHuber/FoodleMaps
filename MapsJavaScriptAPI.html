@@ -4,11 +4,8 @@
 <head>
     <link rel="stylesheet" href="Maps.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&libraries=places&v=weekly"
-        defer
-      ></script>
+    <link rel="icon" type="image/gif" href="Logo1.png"  width="60" height="60"/>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&libraries=places&v=weekly" defer></script>
 </head>
 <body>
     <div id="map"></div>
@@ -61,7 +58,8 @@
         initMap(target, 1)
     });
 
-    function ConvertDMSToDEG(dms) {   
+    function ConvertDMSToDEG(dms) { 
+        console.log(dms);  
         var dms_Array = dms.split(/[^\d\w\.]+/); 
         var degreesNS = dms_Array[0];
         var minutesNS = dms_Array[1];
@@ -71,11 +69,17 @@
         var minutesEW = dms_Array[5];
         var secondsEW = dms_Array[6];
         var directionEW = dms_Array[7];
-
+        
         var deg = [];
         var degNS = (Number(degreesNS) + Number(minutesNS) /60 + Number(secondsNS) / 3600).toFixed(6);
         var degEW = (Number(degreesEW) + Number(minutesEW) /60 + Number(secondsEW) / 3600).toFixed(6);
 
+        if(directionNS != "S" && directionNS != "W" && directionNS != "N" && directionNS != "E" && directionNS != "O"){
+            degNS = dms_Array[0];
+        }
+        if(directionEW != "S" && directionEW != "W" && directionEW != "N" && directionEW != "E" && directionEW != "O"){
+            degEW = dms_Array[1];
+        }
         if(isNaN(dms_Array[0])){
             return false;
         }
@@ -84,12 +88,6 @@
         }
         if (directionEW == "S" || directionEW == "W") {
             degEW = degEW * -1;
-        }
-        if(directionNS != "S" && directionNS != "W" && directionNS != "N" && directionNS != "E" && directionNS != "O"){
-            degNS = dms_Array[0];
-        }
-        if(directionEW != "S" && directionEW != "W" && directionEW != "N" && directionEW != "E" && directionEW != "O"){
-            degEW = dms_Array[1];
         }
         deg[0] = degNS;
         deg[1] = degEW;
@@ -110,7 +108,6 @@
                 }   
                 if (status == google.maps.GeocoderStatus.OK) {
                     var target = (results[0].geometry);
-                    console.log(target);
                 }
             });
         }
@@ -121,7 +118,10 @@
             lng = latlng[1];
             target = new google.maps.LatLng(lat, lng);
         }
-        map.setOptions({center: target, zoom: 8}),
+        map.setOptions({center: target, zoom: 8});
+        if (markerset == true){ //only if marker is set already
+            marker.setMap(null);
+        }
         marker = new google.maps.Marker({position: target, map: map});
         markerset = true;
         document.getElementById("Searchbar").value = "";
