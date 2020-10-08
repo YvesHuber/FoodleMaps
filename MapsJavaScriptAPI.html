@@ -50,7 +50,7 @@
             mapTypeId: document.getElementById('SelectType').value
         });
         mapinitchecker = true;
-        map.setOptions({minZoom: 3, maxZoom: 15});
+        map.setOptions({minZoom: 3, maxZoom: 12});
     });
 
     function ConvertDMSToDEG(dms) {   
@@ -104,7 +104,7 @@
             mapTypeId: document.getElementById('SelectType').value
         });
         mapinitchecker = true;
-        map.setOptions({minZoom: 3, maxZoom: 15});
+        map.setOptions({minZoom: 3, maxZoom: 12});
         var marker = new google.maps.Marker({position: target, map: map});
         evt.preventDefault();
     }
@@ -118,7 +118,7 @@
                 mapTypeId: document.getElementById('SelectType').value
             });
             mapinitchecker = true;
-            map.setOptions({minZoom: 3, maxZoom: 15});
+            map.setOptions({minZoom: 3, maxZoom: 12});
             var marker = new google.maps.Marker({position: target, map: map});
             evt.preventDefault();
         }
@@ -138,10 +138,10 @@
             zoom: 13, 
             center: target, 
             gestureHandling: 'greedy',
-            
+            mapTypeId: document.getElementById('SelectType').value
         });
         mapinitchecker = true;
-        map.setOptions({minZoom: 3, maxZoom: 15});
+        map.setOptions({minZoom: 3, maxZoom: 12});
         var marker = new google.maps.Marker({position: target, map: map});
         infoWindow = new google.maps.InfoWindow();
         infoWindow.setPosition(target);
