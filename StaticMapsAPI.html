@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html> 
+    <link rel="stylesheet" href="about_us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>>
     <title>Static Maps API</title>
 <head>
@@ -20,9 +22,9 @@
 </head>
 <body>
     <div id="floating-panel">
-        <form>
-            <input type="button" id= "BackButton" value="Go back!" style = "width:150px ; height: 50px;" onclick="history.back()">
-        </form>
+            <form id="back">
+                <button type="submit" id="BackButton" formaction="FoodleMapsWeb.html"><i class="fa fa-arrow-left"></i></button>
+            </form>
         <img src = "https://maps.googleapis.com/maps/api/staticmap?center=47.3666700,8.5500000&amp;zoom=10&amp;size=1920x1920&scale2&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc">
             <script type="text/javascript" id = "mapimg">
             /*
