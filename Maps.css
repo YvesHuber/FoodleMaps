@@ -41,6 +41,9 @@
     border-radius: 10px;
     font-size: 20px;
   }
+  #BackButton:hover{
+    background-color:#3B6EC2;
+  }
   ::placeholder{
       color: rgb(163, 163, 163);
   }
@@ -106,6 +109,9 @@
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
     }
+    #SelectType:hover{
+      background-color:#3B6EC2;
+  }
     #SelectButton{
       position: absolute;
       left: 106px;
@@ -124,6 +130,9 @@
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
     }
+    #SelectButton:hover{
+      background-color:#3B6EC2;
+  }
     #RandomButton{
       position: absolute;
       left: 442px;
@@ -140,3 +149,6 @@
       margin: 0px auto;
       border-radius: 10px;
     }
+    #RandomButton:hover{
+      background-color:#3B6EC2;
+  }

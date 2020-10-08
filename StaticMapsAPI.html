@@ -29,8 +29,17 @@
         var lat = "9"
         var lng = "54"
         var url = "https://maps.googleapis.com/maps/api/staticmap?center="
-        var url2 = "&amp;zoom=10&amp;size=1000x1000&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc"
+        var url2 = "&amp;zoom=5&amp;size=1000x1000&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc"
     document.write('<img src="'+ url + lat +  lng + url2 + '">');
+
+    document.getElementById("RandomButton").onclick = function (evt) {
+        maxminheight = 85;
+        maxminwidth = 180;
+        var lng = (Math.random() * maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
+        var lat = (Math.random() * maxminheight - maxminheight * (-1)) + maxminheight * (-1);
+        document.write('<img src="'+ url + lat + "," + lng + url2 + '">');
+        evt.preventDefault();
+    }
 </script>
 </body>
 </html>
