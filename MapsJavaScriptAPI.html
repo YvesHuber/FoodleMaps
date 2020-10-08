@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html> 
-<title>Foodle</title>
+<title>Foodle Maps</title>
 <head>
     <link rel="stylesheet" href="Maps.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&libraries=places&v=weekly"
         defer
@@ -12,11 +13,11 @@
     <div id="map"></div>
 
     <form id="back">
-        <input type="button" id="BackButton" value="Go back" onclick="history.back()"></input>
+        <button id="BackButton" onclick="history.back()"><i class="fa fa-arrow-left"></i></button>
     </form>
     <form id="Searchbarform">
         <input type="text" id ="Searchbar" placeholder="Search for Place" value="" id="DCo" size="50">
-        <button id="SearchButton" type="submit">Search</button>
+        <button id="SearchButton" type="submit"><i class="fa fa-search"></i></button>
     </form>
     <form id="SelectMap">
         <select id="SelectType">
@@ -25,10 +26,10 @@
             <option value="hybrid">Hybrid</option>
             <option value="terrain">Terrain</option>
         </select>
-        <button  id="SelectButton" type="submit">Select</button>
+        <button  id="SelectButton" type="submit"><i class="fa fa-arrow-right"></i></button>
     </form>
-        <form id=RandomButtonForm>
-            <button id = "RandomButton" type="submit">Take Me Anyweare!</button>
+        <form id="RandomButtonForm">
+            <button id = "RandomButton" type="submit">Take Me Anyware <i class="fa fa-arrow-right"></i></button>
         </form>
     <script>
  
@@ -38,19 +39,19 @@
     let marker;
     let mapinitchecker = false;
     let target;
-
-    function loadMapatstart(){
+    
+    window.addEventListener("load", function(){
+        console.log("Document load");
         target = new google.maps.LatLng(0, 0);
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 1, 
             center: target, 
             gestureHandling: 'greedy',
-            mapTypeId: document.getElementById('MapType').value
+            mapTypeId: document.getElementById('SelectType').value
         });
         mapinitchecker = true;
         map.setOptions({minZoom: 3, maxZoom: 15});
-        var marker = new google.maps.Marker({position: target, map: map});
-    }
+    });
 
     function ConvertDMSToDEG(dms) {   
         var dms_Array = dms.split(/[^\d\w\.]+/); 
@@ -86,6 +87,10 @@
 
     document.getElementById("SearchButton").onclick = function (evt) {
         input = document.getElementById("Searchbar").value;
+        if(input == "" || input == " "){
+            alert("INVALID INPUT");
+            return;
+        }
         latlng = [];
         latlng = ConvertDMSToDEG(input);
         lat = latlng[0];
