@@ -79,16 +79,14 @@
         }
         else{return false;}
     }
-    function ConvertDMSToDEG(dms) { 
-        console.log(dms); 
+    function ConvertDMSToDEG(dms) {  
         var deg = [];
         var checkingifdc = checkifdc(dms);
-        if (checkifdc(dms) != false){
+        if(checkifdc(dms) != false){
             deg[0] = checkingifdc[0];
             deg[1] = checkingifdc[1];
-            console.log("Array: " + checkingifdc);
         }
-        else{
+        else {
             var dms_Array = dms.split(/[^\d\w\.]+/); 
             var degreesNS = dms_Array[0];
             var minutesNS = dms_Array[1];
