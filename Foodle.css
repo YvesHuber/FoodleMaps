@@ -13,14 +13,14 @@ html {
   top: 0;
   width: 100%;
   max-width: 100%;
-    overflow-x: hidden;
-  
-}
+  overflow-x: hidden;
+     }
 h1 {
   position: absolute;
   top: 108px;
   left: calc(50% - 272px/1.5);
   bottom: 38px; 
+<<<<<<< Updated upstream
 }
 b      {color: rgb(66, 133, 244);}
 y      {color: rgb(253, 215, 2);}
@@ -28,60 +28,84 @@ r      {color: rgb(219, 68, 55);}
 g      {color: rgb(15, 157, 88);}
 e      {color: grey;}
 c      {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
+=======
+   }
+b {color: rgb(66, 133, 244);}
+y {color: rgb(253, 215, 2);}
+r {color: rgb(219, 68, 55);}
+g {color: rgb(15, 157, 88);}
+e {color: grey;}
+c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
+>>>>>>> Stashed changes
 icon1 {
   left: calc(45% - 272px/1.5);  
   top: 250px;
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
+<<<<<<< Updated upstream
 }
+=======
+      }
+>>>>>>> Stashed changes
 icon2 {
   left: calc(48% - 272px/1.5);  
   top: 250px;
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
-}
+      }
 icon3 {
   left: calc(51% - 272px/1.5);  
   top: 250px;
   cursor: pointer;
   position: relative;
+<<<<<<< Updated upstream
 }
 h1   
     { font-size: 100px;
     line-height: 0;
     }
+=======
+      }
+  h1 {
+    font-size: 100px;
+    line-height: 0;
+     }
+>>>>>>> Stashed changes
   footer {
     position: fixed;
     padding: .6em;
     bottom: 0;
     left: 0;
     right: 0;
-  }
-  h2{  position: absolute;
+         }
+  h2 {
+    position: absolute;
     top: 500px;
     left: calc(50% - 272px/2);
     bottom: 38px;
-    
     font-size: 50px;
-    line-height: 0;}
-    
-    a:hover{
-      color: red;
-    }
+    line-height: 0;
+     }
+  a:hover {
+    color: red;
+          }
 
-    a{
-      color: white;
-    } 
-  h3{  position: absolute;
+  a{
+    color: white;
+   }
+
+  h3 {
+    position: absolute;
     top: 399px;
     left: 36%;
     bottom: 38px;
     font-size: 15px;
     line-height: 0;
-    }
-  z{
+     }
+
+  z {
     position: relative;
     top: 250px;
     left: 43.7%;
@@ -89,8 +113,8 @@ h1
     font-size: 15px;
     line-height: 0;
     font-weight: bold;
-  }
-  x{
+    }
+  x {
     position: relative;
     top: 240px;
     left: 55.5%;
@@ -98,4 +122,10 @@ h1
     font-size: 15px;
     line-height: 0;
     font-weight: bold;
+<<<<<<< Updated upstream
   }
+=======
+    }
+  
+  
+>>>>>>> Stashed changes
