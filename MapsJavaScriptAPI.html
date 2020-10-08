@@ -70,6 +70,9 @@
         var degNS = (Number(degreesNS) + Number(minutesNS) /60 + Number(secondsNS) / 3600).toFixed(6);
         var degEW = (Number(degreesEW) + Number(minutesEW) /60 + Number(secondsEW) / 3600).toFixed(6);
 
+        if(isNaN(dms_Array[0])){
+            return false;
+        }
         if (directionNS == "S" || directionNS == "W") {
             degNS = degNS * -1;
         }
@@ -93,11 +96,26 @@
             alert("INVALID INPUT");
             return;
         }
-        latlng = [];
-        latlng = ConvertDMSToDEG(input);
-        lat = latlng[0];
-        lng = latlng[1];
-        target = new google.maps.LatLng(lat, lng);
+        if(ConvertDMSToDEG(input) == false){ //input is non numeric
+            console.log("Non numeric");
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({'address': input}, function(results, status){
+                if(status !== google.maps.GeocoderStatus.OK){
+                    alert("Places cannot be used in moment because: " + status);
+                }   
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var target = (results[0].geometry);
+                    console.log(target);
+                }
+            });
+        }
+        else{
+            latlng = [];
+            latlng = ConvertDMSToDEG(input);
+            lat = latlng[0];
+            lng = latlng[1];
+            target = new google.maps.LatLng(lat, lng);
+        }
         map.setOptions({center: target, zoom: 8}),
         marker = new google.maps.Marker({position: target, map: map});
         document.getElementById("Searchbar").value = "";
