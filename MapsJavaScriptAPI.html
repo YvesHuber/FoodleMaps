@@ -39,19 +39,19 @@
     let marker;
     let mapinitchecker = false;
     let target;
-
-    function loadMapatstart(){
+    
+    window.addEventListener("load", function(){
+        console.log("Document load");
         target = new google.maps.LatLng(0, 0);
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 1, 
             center: target, 
             gestureHandling: 'greedy',
-            mapTypeId: document.getElementById('MapType').value
+            mapTypeId: document.getElementById('SelectType').value
         });
         mapinitchecker = true;
         map.setOptions({minZoom: 3, maxZoom: 15});
-        var marker = new google.maps.Marker({position: target, map: map});
-    }
+    });
 
     function ConvertDMSToDEG(dms) {   
         var dms_Array = dms.split(/[^\d\w\.]+/); 
@@ -87,6 +87,10 @@
 
     document.getElementById("SearchButton").onclick = function (evt) {
         input = document.getElementById("Searchbar").value;
+        if(input == "" || input == " "){
+            alert("INVALID INPUT");
+            return;
+        }
         latlng = [];
         latlng = ConvertDMSToDEG(input);
         lat = latlng[0];
