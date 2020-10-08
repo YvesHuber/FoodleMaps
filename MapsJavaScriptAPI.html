@@ -136,6 +136,7 @@
     }
     
     document.getElementById("RandomButton").onclick = function (evt) { 	
+        marker.setMap(null);
         maxminheight = 85;
         maxminwidth = 180;
         lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
