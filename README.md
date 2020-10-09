@@ -17,4 +17,4 @@ We are Students so this is more of a test than a serious Project
 
 Yves Huber, Florian Gubler, Andrew Longe, Rohan Somaranjithan
 
-![our logo](Logo.png =200x200)
+![our logo](Logo.png){:height="50%" width="50%"}
