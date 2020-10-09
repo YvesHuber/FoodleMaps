@@ -39,6 +39,7 @@
     let marker;
     let target;
     let markerset = false;
+    let infowindowsset = false;
 
     function initMap(target, zoom){
         map = new google.maps.Map(document.getElementById('map'), {
@@ -125,6 +126,7 @@
         convertedinput = ConvertDMSToDEG(input);
         if(input == "" || input == " "){
             alert("INVALID INPUT");
+            var Request = false;
             return;
         }
         if(convertedinput == false){ //input is non numeric
@@ -132,10 +134,12 @@
             wishedzoom = 1;
             geocoder.geocode({'address': input}, function(results, status){
                 if(status !== google.maps.GeocoderStatus.OK){
-                    alert("Place searching cannot be used in moment because: " + status);
+                    alert("Place searching cannot be used in moment because of: " + status);
+                    var Request = false;
                 }   
                 if (status == google.maps.GeocoderStatus.OK) {
                     var target = (results[0].geometry);
+                    var Request = false;
                 }
             });
         }
@@ -145,8 +149,10 @@
             lat = latlng[0];
             lng = latlng[1];
             target = new google.maps.LatLng(lat, lng);
-            console.log("set marker");
             wishedzoom = 8;
+            var Request = true;
+        }
+        if(Request == true){
             map.setOptions({center: target, zoom: wishedzoom});
             if (markerset == true){ //only if marker is set already
                 marker.setMap(null);
@@ -167,7 +173,7 @@
     document.getElementById("RandomButton").onclick = function (evt) { 
         if(markerset == true){ //only if marker is set already
             marker.setMap(null);
-        }	
+        }
         maxminheight = 85;
         maxminwidth = 180;
         lng = Math.random() * (maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
@@ -179,6 +185,7 @@
         infoWindow.setPosition(target);
         infoWindow.setContent("Random Position: " + Math.round(lat) + ", " + Math.round(lng));
         infoWindow.open(map);
+        infowindowsset = true;
         evt.preventDefault();
     }
     </script>
