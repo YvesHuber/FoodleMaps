@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Directions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>
+    <title>Direction Map API</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap&libraries=&v=weekly"
+      defer
+    >
+    </script>
+    <style> 
+      body { 
+          animation: fadeInAnimation ease 2s; 
+          animation-iteration-count: 1; 
+          animation-fill-mode: forwards; 
+      } 
+      @keyframes fadeInAnimation { 
+          0% 
+          { 
+              opacity: 0; 
+          } 
+          100% 
+          { 
+              opacity: 1; 
+          } 
+      } 
+    </style> 
+  </head>
+  <body>
+    <form id="back">
+        <button type="submit" id="BackButton" formaction="index.html"><i class="fa fa-arrow-left"></i></button>
+    </form>
+    <form id="start">
+      <select id="startselect">
+        <option value="Default">Select Startpoint</option>
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+    </form>
+    <form id="end">
+      <select id="endselect">
+        <option value="Default">Select Endpoint</option>
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+    </form>  
+    <div id="map"></div>
+    <script>
+      let map;
+      function initMap() {
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer();
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 7,
+          center: { lat: 41.85, lng: -87.65 },
+        });
+        map.setOptions({minZoom: 3, maxZoom: 15});
+        directionsRenderer.setMap(map);
+        const onChangeHandler = function () {
+          calculateAndDisplayRoute(directionsService, directionsRenderer);
+        };
+        document
+          .getElementById("startselect")
+          .addEventListener("change", onChangeHandler);
+        document
+          .getElementById("endselect")
+          .addEventListener("change", onChangeHandler);
+      }
+        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+          directionsService.route(
+            {
+              origin: {
+                query: document.getElementById("startselect").value,
+              },
+              destination: {
+                query: document.getElementById("endselect").value,
+              },
+              travelMode: google.maps.TravelMode.DRIVING,
+            },
+              (response, status) => {
+                if (status === "OK") {
+                  directionsRenderer.setDirections(response);
+              } 
+              else {
+              window.alert("Directions request failed due to " + status);
+              }
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

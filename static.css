@@ -1,0 +1,65 @@
+    html{
+        background-color: black;
+        background-image: url(Background.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment:fixed; /* Wenn man runterscrollt sollte das Hintergrundbild oben bleiben*/
+        height: 100%;
+        left: 0;
+        margin: 0;
+        opacity: 1;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    
+    #BackButton{
+        position: absolute;
+        left: 1%;
+        bottom: 2%;
+        color: rgb(163, 163, 163);
+        background-color:#2d2d2e;
+        padding: 11px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        height: 45px;
+        border: 0;
+        width: 70px;
+        margin: 0px auto;
+        border-radius: 10px;
+        font-size: 20px;
+        transition: all 1s ease;
+        transform: scale(1);
+    }
+    #BackButton:hover{
+        transform: scale(1.25) ;
+        color: #3B6EC2;
+        background-color:#2d2d2e;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+    }
+    #Mapphoto{
+        padding-left: 31.99%;
+        padding-top: 0%;
+    }
+    #LogoForm{
+        padding-left: 35.5%;
+        padding-top: 0%;
+    }
+    /*h1 {
+        position: absolute;
+        top: 108px;
+        left: calc(50% - 272px/1);
+        bottom: 38px; 
+        font-size: 90px;
+        line-height: 0;
+      }
+      b {color: rgb(66, 133, 244);}
+      y {color: rgb(253, 215, 2);}
+      r {color: rgb(219, 68, 55);}
+      g {color: rgb(15, 157, 88);}
+      e {color: grey;}
+      c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}*/

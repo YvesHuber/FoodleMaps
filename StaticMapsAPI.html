@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html> 
+    <link rel="stylesheet" href="static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>
+    <title>Static Maps API</title>
+    <style> 
+        body { 
+            animation: fadeInAnimation ease 2s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        } 
+        @keyframes fadeInAnimation { 
+            0% { 
+                opacity: 0; 
+            } 
+            100% { 
+                opacity: 1; 
+            } 
+        } 
+    </style> 
+<head>
+<body>
+    <form id="LogoForm">
+        <img id="LogoPNG" src="Static Maps.png" style="width:500px;height:100px;">
+    </form>
+    <div id="floating-panel">
+        <form id="back">
+            <button type="submit" id="BackButton" formaction="index.html"><i class="fa fa-arrow-left"></i></button>
+        </form>
+        <form id="MapphotoForm">
+            <img id="Mapphoto" src = "https://maps.googleapis.com/maps/api/staticmap?center=47.3666700,8.5500000&amp;zoom=4&amp;size=1920x1080&amp;scale3&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc">
+        </form>
+            <script type="text/javascript" id = "mapimg">
+            /*
+            var lat = "85"
+            var lng = "180"
+            var url = "https://maps.googleapis.com/maps/api/staticmap?center="
+            var url2 = "&amp;zoom=2&amp;size=1000x1000&amp;key=AIzaSyCP1y_kwKFUy_jBDb-4EvUjt7b5jCYftfc"
+            document.write('<img src="'+ url + lat +  lng + url2 + '">');
+            document.getElementById("RandomButton").onclick = function (evt) {
+            maxminheight = 85;
+            maxminwidth = 180;
+            var lng = (Math.random() * maxminwidth - maxminwidth * (-1)) + maxminwidth * (-1);
+            var lat = (Math.random() * maxminheight - maxminheight * (-1)) + maxminheight * (-1);
+            document.write('<img src="'+ url + lat + "," + lng + url2 + '">');
+            evt.preventDefault();
+            }*/
+        </script>
+</body>
+</html>

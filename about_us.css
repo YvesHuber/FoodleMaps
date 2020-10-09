@@ -1,0 +1,90 @@
+html {
+    background-color: black;
+    background-image: url(Background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed; /* Wenn man runterscrollt sollte das Hintergrundbild oben bleiben*/
+    height: 100%;
+    left: 0;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    }
+#BackButton {
+    position: absolute;
+    left: 0.75%;
+    bottom: 1.5%;
+    color: rgb(163, 163, 163);
+    background-color:#615d5d;
+    padding: 11px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    height: 45px;
+    width: 70px;
+    margin: 0px auto;
+    border:0;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 1s ease;
+    transform: scale(1);
+}
+#BackButton:hover{
+    transform: scale(1.25);
+    color: #3B6EC2;
+    background-color:#2d2d2e;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+h1 { 
+    position: absolute;
+    top: 108px;
+    left: calc(50% - 272px/1.2);
+    bottom: 38px;
+    font-size:100px;
+    line-height: 0;
+    } 
+
+    b {color: rgb(66, 133, 244);}
+    y {color: rgb(253, 215, 2);}
+    r {color: rgb(219, 68, 55);}
+    g {color: rgb(15, 157, 88);}
+    c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
+
+p1
+    { 
+    position: absolute;
+    top: 408px;
+    left: calc(25% - 272px/2);
+    right: calc(25% - 272px/2);
+    bottom: 38px;
+    }
+h4 {
+    text-align: center; 
+    position: static; 
+    top: 50%
+}
+#LogoForm{
+    padding-left: 35.5%;
+    padding-top: 10%;
+}
+h3
+    { 
+    position: absolute;
+    top: 308px;
+    left: calc(55% - 272px/2);
+    right: calc(45% - 272px/2);
+    bottom: 38px;
+    }
+
+footer {
+    position: fixed;
+    padding: .6em;
+    bottom: 0;
+    left: 600px;
+    right: 0;
+    }

@@ -1,0 +1,190 @@
+#map {
+    height: 100%;
+  }
+  html,
+  body {
+    background-color: #000;
+    background-image: url(Background.jpg);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  button {
+      background-color: rgb(150, 241, 253);
+      color: #000;
+      padding: 5px;
+      border:0;
+      border-radius:2px;
+  }      
+  input {
+      padding:5px;
+      border:0;
+      size: 30px;
+      border-radius: 2px;
+      box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
+  select {
+      padding:5px;
+      border:0;
+      border-radius:2px;
+  }
+  #BackButton {
+    position: absolute;
+    left: 0.75%;
+    bottom: 1.5%;
+    color: rgb(163, 163, 163);
+    background-color:#2d2d2e;
+    padding: 11px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    height: 45px;
+    width: 70px;
+    margin: 0px auto;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 1s ease;
+    transform: scale(1);
+  }
+  #BackButton:hover{
+    background-color:#3B6EC2;
+    transform: scale(1.25);
+    color: #3B6EC2;
+    background-color:#2d2d2e;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+  ::placeholder{
+      color: rgb(163, 163, 163);
+  }
+  input:focus {
+      outline: none;
+      background: transparent;
+      color: #fff;
+  }
+  #Searchbar {
+      position: absolute;
+      top:4px;
+      left:4px;
+      color: rgb(163, 163, 163);
+      background-color: #424447;
+      padding: 11px;
+
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      
+      text-align: left;
+      text-decoration: none;
+
+      margin: 0px auto;
+      border-radius: 10px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  #Searchbar:hover{
+      background-color:#3B6EC2;
+  }
+  #SearchButton{
+      position:absolute;
+      top: 4px;
+      left: 377px;
+      width: 60px;
+      height: 40px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      color: rgb(163, 163, 163);
+      background-color: #2d2d2e;
+      border-radius: 10px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      transition: all 1s ease;
+      
+  }
+  #SearchButton:hover{
+    background-color:#3B6EC2;
+    font-size: 24px;
+}
+  #SelectType{
+      position: absolute;
+      left: 4px;
+      top: 50px;
+      color: rgb(163, 163, 163);
+      background-color: #424447;
+      padding: 11px;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      height: 40px;
+      margin: 0px auto;
+      border-radius: 10px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    #SelectType:hover{
+      background-color:#3B6EC2;
+  }
+    #SelectButton{
+      position: absolute;
+      left: 106px;
+      top: 50px;
+      color: rgb(163, 163, 163);
+      background-color: #2d2d2e;
+      padding: 11px;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      height: 40px;
+      text-align: left;
+      text-decoration: none;
+
+      margin: 0px auto;
+      border-radius: 10px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      transition: all 1s ease;
+      transform: translate(1);
+    }
+    #SelectButton:hover{
+      background-color:#3B6EC2;
+      transform: scaleX(1.5);
+      transform: translateX(+10%);
+  }
+    #RandomButton{
+      position: absolute;
+      left: 442px;
+      top: 4px;
+      color: rgb(163, 163, 163);
+      background-color: #2d2d2e;
+      padding: 11px;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      height: 40px;
+      text-align: left;
+      text-decoration: none;
+      margin: 0px auto;
+      border-radius: 10px;
+      transition: all 1s ease;
+      transform: translate(1);
+    }
+    #RandomButton:hover{
+      background-color:#3B6EC2;
+      transform: translate(+10%, 0);
+    }
+    #Position{
+      position: absolute;
+      right: 70px;
+      top: 4px;
+      color: rgb(163, 163, 163);
+      background-color: #424447;
+      padding: 11px;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      height: 18px;
+      text-align: left;
+      text-decoration: none;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-size: 12.5px;
+      margin: 0px auto;
+      border-radius: 10px;
+    }  
