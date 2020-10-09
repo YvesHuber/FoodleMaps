@@ -17,4 +17,4 @@ We are Students so this is more of a test than a serious Project
 
 Yves Huber, Florian Gubler, Andrew Longe, Rohan Somaranjithan
 
-![our logo](https://github.com/YvesHuber/FoodleMaps/tree/images/Logo.png)
+<img src = https://github.com/YvesHuber/FoodleMaps/blob/images/Logo.png>
