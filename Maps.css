@@ -84,10 +84,14 @@
       border-radius: 10px;
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
+      transition: all 1s ease;
   }
   #Searchbar:hover{
       background-color:#3B6EC2;
   }
+  #Searchbar:hover + #SearchButton{
+    background-color:#32486b;
+}
   #SearchButton{
       position:absolute;
       top: 4px;
@@ -121,10 +125,14 @@
       border-radius: 10px;
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
+      transition: all 1s ease;
     }
     #SelectType:hover{
       background-color:#3B6EC2;
   }
+  #SelectType:hover + #SelectButton{
+    background-color: #32486b;
+}
     #SelectButton{
       position: absolute;
       left: 106px;
