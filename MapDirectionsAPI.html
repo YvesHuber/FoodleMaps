@@ -9,7 +9,8 @@
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap&libraries=&v=weekly"
       defer
-    ></script>
+    >
+    </script>
     <style> 
       body { 
           animation: fadeInAnimation ease 2s; 
@@ -17,14 +18,16 @@
           animation-fill-mode: forwards; 
       } 
       @keyframes fadeInAnimation { 
-          0% { 
+          0% 
+          { 
               opacity: 0; 
           } 
-          100% { 
+          100% 
+          { 
               opacity: 1; 
           } 
       } 
-  </style> 
+    </style> 
   </head>
   <body>
     <form id="back">
@@ -76,7 +79,6 @@
         });
         map.setOptions({minZoom: 3, maxZoom: 15});
         directionsRenderer.setMap(map);
-
         const onChangeHandler = function () {
           calculateAndDisplayRoute(directionsService, directionsRenderer);
         };
@@ -87,24 +89,24 @@
           .getElementById("endselect")
           .addEventListener("change", onChangeHandler);
       }
-
-      function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-        directionsService.route(
-          {
-            origin: {
-              query: document.getElementById("startselect").value,
+        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+          directionsService.route(
+            {
+              origin: {
+                query: document.getElementById("startselect").value,
+              },
+              destination: {
+                query: document.getElementById("endselect").value,
+              },
+              travelMode: google.maps.TravelMode.DRIVING,
             },
-            destination: {
-              query: document.getElementById("endselect").value,
-            },
-            travelMode: google.maps.TravelMode.DRIVING,
-          },
-          (response, status) => {
-            if (status === "OK") {
-              directionsRenderer.setDirections(response);
-            } else {
+              (response, status) => {
+                if (status === "OK") {
+                  directionsRenderer.setDirections(response);
+              } 
+              else {
               window.alert("Directions request failed due to " + status);
-            }
+              }
           }
         );
       }
