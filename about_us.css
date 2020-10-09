@@ -109,8 +109,8 @@ body {
 
 #BackButton {
     position: absolute;
-    left: 4px;
-    bottom: 4px;
+    left: 0.75%;
+    bottom: 1.5%;
     height: 40px;
     z-index: 5;
     width: 50px;
@@ -125,6 +125,11 @@ body {
     line-height: 30px;
     padding-left: 10px;
     font-size: 15px;
+    transition: all 1s ease;
+    transform: scale(1);
     }
 
-#BackButton:hover {background-color:#3B6EC2;}
+#BackButton:hover {
+    background-color:#3B6EC2;
+    transform: scale(1.25);
+}

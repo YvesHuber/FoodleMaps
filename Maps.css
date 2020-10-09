@@ -31,8 +31,8 @@
 
   #BackButton {
     position: absolute;
-    left: 4px;
-    bottom: 4px;
+    left: 0.75%;
+    bottom: 1.5%;
     color: rgb(163, 163, 163);
     background-color:#2d2d2e;
     padding: 11px;
@@ -43,12 +43,29 @@
     margin: 0px auto;
     border-radius: 10px;
     font-size: 20px;
+    transition: all 1s ease;
+    transform: scale(1);
   }
+<<<<<<< HEAD
 
   #BackButton:hover{background-color:#3B6EC2;}
 
   ::placeholder{color: rgb(163, 163, 163);}
 
+=======
+  #BackButton:hover{
+    background-color:#3B6EC2;
+    transform: scale(1.25);
+    color: #3B6EC2;
+    background-color:#2d2d2e;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+  ::placeholder{
+      color: rgb(163, 163, 163);
+  }
+>>>>>>> f68310857047e79c2f8219a58b4822569c21d878
   input:focus {
       outline: none;
       background: transparent;
