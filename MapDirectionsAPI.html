@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <link rel="stylesheet" href="Directions.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/gif" href="Logo.png"  width="60" height="60"/>
+
     <title>Direction Map API</title>
+
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap&libraries=&v=weekly"
-      defer
-    >
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4LoCAFYz3qASC-yq1m5jrbtfx6So1eeQ&callback=initMap&libraries=&v=weekly"defer></script>
+    
     <style> 
       body { 
           animation: fadeInAnimation ease 2s; 
@@ -18,16 +18,11 @@
           animation-fill-mode: forwards; 
       } 
       @keyframes fadeInAnimation { 
-          0% 
-          { 
-              opacity: 0; 
-          } 
-          100% 
-          { 
-              opacity: 1; 
-          } 
+          0% {opacity: 0;} 
+          100% {opacity: 1;} 
       } 
     </style> 
+    
   </head>
   <body>
     <form id="back">
