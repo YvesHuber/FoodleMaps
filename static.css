@@ -43,9 +43,13 @@
     }
     #Mapphoto{
         padding-left: 31.99%;
-        padding-top: 12%;
+        padding-top: 0%;
     }
-    h1 {
+    #LogoForm{
+        padding-left: 35.5%;
+        padding-top: 0%;
+    }
+    /*h1 {
         position: absolute;
         top: 108px;
         left: calc(50% - 272px/1);
@@ -58,4 +62,4 @@
       r {color: rgb(219, 68, 55);}
       g {color: rgb(15, 157, 88);}
       e {color: grey;}
-      c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
+      c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}*/
