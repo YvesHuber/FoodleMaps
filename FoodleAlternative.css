@@ -33,7 +33,7 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
 
 #JavaScriptAPIButton {
   color: rgb(163, 163, 163);
-  left: 16.45%;  
+  left: 17%;  
   top: 330px;
   width: 100px;
   height: 100px;
@@ -43,10 +43,11 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   font-size: 70px;
   transition: all 1s ease;
   transform: scale(1);
+  cursor: pointer;
 }
 #DirectionsButton {
   color: rgb(163, 163, 163);
-  left: 47%;  
+  left: 47.65%;  
   top: 330px;
   width: 100px;
   height: 100px;
@@ -56,10 +57,11 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   font-size: 70px;
   transition: all 1s ease;
   transform: scale(1);
+  cursor: pointer;
 }
 #StaticMapsButton {
   color: rgb(163, 163, 163);
-  left: 79.4%;  
+  left: 80%;  
   top: 330px;
   width: 100px;
   height: 100px;
@@ -69,6 +71,7 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   font-size: 70px;
   transition: all 1s ease;
   transform: scale(1);
+  cursor: pointer;
 }
 #JavaScriptAPIButton:hover {
   transform: scale(1.5) perspective(1px);
@@ -116,9 +119,10 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   border-radius: 5px;
 }
 #JavaScriptAPIText {
+  transition: all 1s ease;
   color: white;
-  left: 15.75%;  
-  top: 56%;
+  left: 15.85%;  
+  top: 57.5%;
   height: 35px;
   box-sizing: border-box;
   position: absolute;
@@ -128,8 +132,10 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   line-height: 0;
   font-size: 15px;
   font-weight: bold;
+  cursor: pointer;
 }
 #DirectionsText {
+  transition: all 1s ease;
   color: white;
   left: 44%;  
   top: 58%;
@@ -142,11 +148,13 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   line-height: 0;
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
 }
 #StaticMapsText {
+  transition: all 1s ease;
   color: white;
   left: 79.25%;  
-  top: 58%;
+  top: 58.3%;
   height: 35px;
   box-sizing: border-box;
   position: absolute;
@@ -156,6 +164,29 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   line-height: 0;
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
+}
+#JavaScriptAPIText:hover {
+  color: #3B6EC2;
+  background-color:#2d2d2e;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+#DirectionsText:hover {
+  
+  color: #3B6EC2;
+  background-color:#2d2d2e;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+#StaticMapsText:hover {
+  color: #3B6EC2;
+  background-color:#2d2d2e;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
 }
 footer {
   color: white;
