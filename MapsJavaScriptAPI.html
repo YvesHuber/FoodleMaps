@@ -136,6 +136,24 @@
         return deg;
     }
 
+
+    function GetCoordinatesfromAdress(input) {
+        var result = [];
+        alert("REQUEST_DENIED");
+        var x;
+        var y;
+        const requestURL = 'https://photon.komoot.de/api/?q=' + input;
+        fetch(requestURL).then(res => res.json()).then(data = result).catch((error) => {console.error('Error:', error);});
+        result = JSON.parse(result);
+        x = result['features']['geometry']['coordinates'][0];
+        y = result['features']['geometry']['coordinates'][1];
+        console.log(x + ";" + y);
+        var latitudelongitude = [];
+        latitudelongitude[0] = x;
+        latitudelongitude[1] = y;
+        return latitudelongitude;
+    }
+
     document.getElementById("SearchButton").onclick = function (evt) {
         input = document.getElementById("Searchbar").value;
         convertedinput = ConvertDMSToDEG(input);
@@ -145,21 +163,13 @@
             return;
         }
         if(convertedinput == false){ //input is non numeric
-            geocoder = new google.maps.Geocoder();
-            wishedzoom = 1;
-            geocoder.geocode({'address': input}, function(results, status){
-                if(status !== google.maps.GeocoderStatus.OK){
-                    alert("Place searching cannot be used in moment because of: " + status);
-                    var Request = false;
-                }   
-                if (status == google.maps.GeocoderStatus.OK) {
-                    var target = (results[0].geometry);
-                    var Request = false;
-                }
-            });
+            var coordinates = [];
+            coordinates = GetCoordinatesfromAdress(input);
+            target = new google.maps.LatLng(coordinates[0], coordinates[1]);
+            var Request = true;
         }
         else{
-            latlng = [];
+            var latlng = [];
             latlng = convertedinput;
             lat = latlng[0];
             lng = latlng[1];
