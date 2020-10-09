@@ -19,10 +19,20 @@
         font-size: 20px;
     }
     #Mapphoto{
-        height:50%;
-        width:50%;
-        text-align: center;
-        align-self: center;
-        padding-left: 30%;
-        padding-top: 3%;
+        padding-left: 33%;
+        padding-top: 11%;
     }
+    h1 {
+        position: absolute;
+        top: 5%;
+        left: calc(50% - 272px/1);
+        bottom: 38px; 
+        font-size: 100px;
+        line-height: 0;
+      }
+      b {color: rgb(66, 133, 244);}
+      y {color: rgb(253, 215, 2);}
+      r {color: rgb(219, 68, 55);}
+      g {color: rgb(15, 157, 88);}
+      e {color: grey;}
+      c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
