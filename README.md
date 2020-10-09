@@ -13,4 +13,4 @@ This Project is part of a test for us to implement APIs in a Website and to try 
 
 We are Students so this is more of a test than a serious Project
 Yves Huber, Florian Gubler, Andrew Longe, Rohan Somaranjithan
-![our logo](Logo.png = 256x256)
+![our logo](Logo.png)
