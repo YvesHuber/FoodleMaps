@@ -82,7 +82,7 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   color: #3B6EC2;
   background-color:#2d2d2e;
   outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
   border-radius: 5px;
 }
 #DirectionsButton:hover {
@@ -97,7 +97,7 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   color: #3B6EC2;
   background-color:#2d2d2e;
   outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
   border-radius: 5px;
 }
 #StaticMapsButton:hover {
@@ -112,7 +112,7 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   color: #3B6EC2;
   background-color:#2d2d2e;
   outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
   border-radius: 5px;
 }
 #JavaScriptAPIText {
@@ -125,6 +125,9 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   background-color: transparent;
   border-radius: 20px;
   border: 0;
+  line-height: 0;
+  font-size: 15px;
+  font-weight: bold;
 }
 #DirectionsText {
   color: white;
@@ -136,6 +139,9 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   background-color: transparent;
   border-radius: 20px;
   border: 0;
+  line-height: 0;
+  font-weight: bold;
+  font-size: 15px;
 }
 #StaticMapsText {
   color: white;
@@ -147,8 +153,12 @@ c {font-family: 'Segoe UI', 'Roboto', arial, sans-serif;}
   background-color: transparent;
   border-radius: 20px;
   border: 0;
+  line-height: 0;
+  font-weight: bold;
+  font-size: 15px;
 }
 footer {
+  color: white;
   position: fixed;
   padding: 2px;
   bottom: 0;
@@ -184,22 +194,5 @@ h3{
   font-size: 15px;
   line-height: 0;
 }
-z {
-  position: relative;
-  top: 250px;
-  left: 43.7%;
-  bottom: 38px;
-  font-size: 15px;
-  line-height: 0;
-  font-weight: bold;
-}
-x {
-  position: relative;
-  top: 240px;
-  left: 55.5%;
-  bottom: 38px;
-  font-size: 15px;
-  line-height: 0;
-  font-weight: bold;
-}
+
   
