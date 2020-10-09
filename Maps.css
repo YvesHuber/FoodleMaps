@@ -46,13 +46,6 @@
     transition: all 1s ease;
     transform: scale(1);
   }
-<<<<<<< HEAD
-
-  #BackButton:hover{background-color:#3B6EC2;}
-
-  ::placeholder{color: rgb(163, 163, 163);}
-
-=======
   #BackButton:hover{
     background-color:#3B6EC2;
     transform: scale(1.25);
@@ -65,7 +58,6 @@
   ::placeholder{
       color: rgb(163, 163, 163);
   }
->>>>>>> f68310857047e79c2f8219a58b4822569c21d878
   input:focus {
       outline: none;
       background: transparent;
