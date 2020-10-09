@@ -19,7 +19,7 @@ html {
     left: 0.75%;
     bottom: 1.5%;
     color: rgb(163, 163, 163);
-    background-color:#6d6d70;
+    background-color:#615d5d;
     padding: 11px;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -33,7 +33,6 @@ html {
     transform: scale(1);
 }
 #BackButton:hover{
-    background-color:#3B6EC2;
     transform: scale(1.25);
     color: #3B6EC2;
     background-color:#2d2d2e;
@@ -64,7 +63,15 @@ p1
     right: calc(25% - 272px/2);
     bottom: 38px;
     }
-
+h4 {
+    text-align: center; 
+    position: static; 
+    top: 50%
+}
+#LogoForm{
+    padding-left: 35.5%;
+    padding-top: 10%;
+}
 h3
     { 
     position: absolute;
