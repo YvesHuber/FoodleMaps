@@ -14,7 +14,5 @@ This Project is part of a test for us to implement APIs in a Website and to try 
 We are Students so this is more of a test than a serious Project
 
 Yves Huber, Florian Gubler, Andrew Longe, Rohan Somaranjithan
-<img
-src = (https://github.com/YvesHuber/FoodleMaps/tree/images/Logo.png)
-raw = ture
-/>
+
+![our logo](https://github.com/YvesHuber/FoodleMaps/tree/images/Logo.png)
