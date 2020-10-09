@@ -42,13 +42,13 @@
         border-radius: 5px;
     }
     #Mapphoto{
-        padding-left: 30%;
-        padding-top: 6.2%;
+        padding-left: 31.99%;
+        padding-top: 12%;
     }
     h1 {
         position: absolute;
-        top: 0%;
-        left: 34.5%;
+        top: 108px;
+        left: calc(50% - 272px/1);
         bottom: 38px; 
         font-size: 90px;
         line-height: 0;
