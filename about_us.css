@@ -14,34 +14,33 @@ html {
     top: 0;
     width: 100%;
     }
-    #BackButton {
-        position: absolute;
-        left: 0.75%;
-        bottom: 1.5%;
-        color: rgb(163, 163, 163);
-        background-color:#2d2d2e;
-        padding: 11px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        height: 45px;
-        width: 70px;
-        margin: 0px auto;
-        border-radius: 10px;
-        font-size: 20px;
-        transition: all 1s ease;
-        transform: scale(1);
-        border: 0;
-        }
-        #BackButton:hover{
-        background-color:#3B6EC2;
-        transform: scale(1.25);
-        color: #3B6EC2;
-        background-color:#2d2d2e;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        border-radius: 5px;
-        }
-
+#BackButton {
+    position: absolute;
+    left: 0.75%;
+    bottom: 1.5%;
+    color: rgb(163, 163, 163);
+    background-color:#6d6d70;
+    padding: 11px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    height: 45px;
+    width: 70px;
+    margin: 0px auto;
+    border:0;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 1s ease;
+    transform: scale(1);
+}
+#BackButton:hover{
+    background-color:#3B6EC2;
+    transform: scale(1.25);
+    color: #3B6EC2;
+    background-color:#2d2d2e;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
 h1 { 
     position: absolute;
     top: 108px;
@@ -82,54 +81,3 @@ footer {
     left: 600px;
     right: 0;
     }
-
-#map {height: 100%;}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    }
-
-#startselect {
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    height: 40px;
-    z-index: 5;
-    width: 140px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    background-color: #424447;
-    color: rgb(163, 163, 163);
-    padding: 5px;
-    border: 0;
-    text-align: center;
-    font-family: "Roboto", "sans-serif";
-    border-radius: 10px;
-    line-height: 30px;
-    padding-left: 10px;
-    }
-
-#startselect:hover {background-color:#3B6EC2;}
-
-#endselect {
-    position: absolute;
-    left: 150px;
-    top: 4px;
-    height: 40px;
-    width: 140px;
-    z-index: 5;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    color: rgb(163, 163, 163);
-    background-color: #424447;
-    padding: 5px;
-    border: 0;
-    text-align: center;
-    font-family: "Roboto", "sans-serif";
-    border-radius: 10px;
-    line-height: 30px;
-    padding-left: 10px;
-    }
-
-#endselect:hover {background-color:#3B6EC2;}
