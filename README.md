@@ -12,5 +12,9 @@ This Project is part of a test for us to implement APIs in a Website and to try 
 ### About Us
 
 We are Students so this is more of a test than a serious Project
+
+#### The Team
+
 Yves Huber, Florian Gubler, Andrew Longe, Rohan Somaranjithan
+
 ![our logo](Logo.png)
