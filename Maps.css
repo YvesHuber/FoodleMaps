@@ -101,12 +101,11 @@
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
       transition: all 1s ease;
-      transform: translate(1);
+      
   }
   #SearchButton:hover{
     background-color:#3B6EC2;
-    transform: scaleX(2);
-    transform: translateX(+2.5%);
+    font-size: 24px;
 }
   #SelectType{
       position: absolute;
