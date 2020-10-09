@@ -110,6 +110,7 @@ body {
     border-radius: 10px;
     line-height: 30px;
     padding-left: 10px;
+    transition: all 1s ease;
 }
 
 #startselect:hover {background-color:#3B6EC2;}
@@ -131,6 +132,7 @@ body {
     border-radius: 10px;
     line-height: 30px;
     padding-left: 10px;
+    transition: all 1s ease;
     }
 
 #endselect:hover {background-color:#3B6EC2;}
