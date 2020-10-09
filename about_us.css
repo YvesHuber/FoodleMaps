@@ -14,6 +14,14 @@ html {
     top: 0;
     width: 100%;
     }
+    #output{
+        position: relative;
+        color: white;
+        top: 30%;
+        left: 45%;
+        padding: 20px;
+        font-size: 30px;
+    }
 #BackButton {
     position: absolute;
     left: 0.75%;
