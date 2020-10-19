@@ -51,6 +51,7 @@
     let target;
     let markerset = false;
     let infowindowsset = false;
+    let latitudelongitude = [];
 
     function initMap(target, zoom){
         map = new google.maps.Map(document.getElementById('map'), {
@@ -132,22 +133,16 @@
         return deg;
     }
 
-
     function GetCoordinatesfromAdress(input) {
-        var result = [];
-        alert("REQUEST_DENIED");
-        var x;
-        var y;
-        const requestURL = 'https://photon.komoot.de/api/?q=' + input;
-        fetch(requestURL).then(res => res.json()).then(data = result).catch((error) => {console.error('Error:', error);});
-        result = JSON.parse(result);
-        x = result['features']['geometry']['coordinates'][0];
-        y = result['features']['geometry']['coordinates'][1];
-        console.log(x + ";" + y);
-        var latitudelongitude = [];
-        latitudelongitude[0] = x;
-        latitudelongitude[1] = y;
-        return latitudelongitude;
+        console.log(fetch('http://photon.komoot.de/api/?q=' + input + '&limit=1')
+            .then(response => response.json()));
+            /*
+            .then(data => {
+                latitudelongitude[0] = (data['features'][0]['geometry']['coordinates'][0]);
+                latitudelongitude[1] = (data['features'][0]['geometry']['coordinates'][1]);
+                console.log("target: " + latitudelongitude);
+                return latitudelongitude;
+            }));*/
     }
 
     document.getElementById("SearchButton").onclick = function (evt) {
@@ -161,8 +156,7 @@
         if(convertedinput == false){ //input is non numeric
             var coordinates = [];
             coordinates = GetCoordinatesfromAdress(input);
-            target = new google.maps.LatLng(coordinates[0], coordinates[1]);
-            var Request = true;
+            //target = new google.maps.LatLng(GetCoordinatesfromAdress(input)[0], GetCoordinatesfromAdress(input)[1]);
         }
         else{
             var latlng = [];
